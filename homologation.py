@@ -1,48 +1,61 @@
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
-# modules : python3-zeep xmlsec
+# modules : python3-zeep
 
 import os
 import zeep
-#from zeep.transports import Transport
-#from requests import Session
-#from requests.auth import HTTPBasicAuth
 import requests
 import logging.config
+import argparse
+import json
 
-logging.config.dictConfig({
-    'version': 1,
-    'formatters': {
-        'verbose': {
-            'format': '%(name)s: %(message)s'
-        }
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
-    },
-    'loggers': {
-        'zeep.transports': {
-            'level': 'DEBUG',
-            'propagate': True,
-            'handlers': ['console'],
-        },
-    }
-})
+parser = argparse.ArgumentParser()
+
+parser.add_argument("conf", help="Configuration file (typically private/*.conf.json)")
+
+args = parser.parse_args()
+
+with open(args.conf, 'r') as json_file:
+    conf = json.load(json_file)
+
+# Revolves path relative to configuration file
+def conf_abspath(key):
+    cwd = os.getcwd()
+    try:
+        os.chdir(os.path.dirname(args.conf))
+        path = conf[key]
+        path = os.path.expanduser(path)
+        path = os.path.abspath(path)
+        return path
+    finally:
+        os.chdir(cwd)
+
+logging.basicConfig()
+debug = []
+
+#debug.append("urllib3")
+#debug.append("zeep.wsdl")
+debug.append("zeep.transports")
+
+for logger in debug:
+    logger = logging.getLogger(logger)
+    logger.setLevel(logging.DEBUG)
+    logger.propagate = True
 
 # test du shéma :
 # python3 -mzeep ../../001_services_soap/Enedis.SGE.GUI.0427.B2B\ RecherchePointV2.0_v1.1/Services/RecherchePoint/RecherchePoint-v2.0.wsdl
 
-WSDL_SCHEMA_FILE_URL = "file://" + '~/cloud.consometers.org/projets/201909_sen2/01_quoalise/lot_proxy_sge/documentation_SGE/000_homologation/001_services_soap/Enedis.SGE.GUI.0427.B2B RecherchePointV2.0_v1.1/Services/RecherchePoint/RecherchePoint-v2.0.wsdl'
-#WSSE = UsernameToken("***", "***")
+WSDL_SCHEMA_FILE_URL = "file://" + conf_abspath('WSDL_SCHEMA_FILE')
 
 req_session = requests.Session()
-#req_session.verify = True
-#req_session.timeout = 5
-req_session.auth = requests.auth.HTTPBasicAuth("***", "***")
-req_session.cert = ("fullchain2.pem", "privkey2.pem")
+req_session.auth = requests.auth.HTTPBasicAuth(conf['LOGIN'], conf['PASSWORD'])
+
+req_session.cert = (conf_abspath("CERT_FULLCHAIN"),
+                    conf_abspath("CERT_PRIVKEY"))
+
+# Made with cat cat enedis-cert.pem SSL\ OV_Quovadis/intermdiaire/QuoVadis_OV_SSL_ICA_G3.pem  SSL\ OV_Quovadis/racine/QuoVadis_Root_CA_2_G3.pem > enedis-fullchain.pem
+req_session.verify = './enedis-fullchain.pem'
+
 transport_with_basic_auth_and_cert = zeep.transports.Transport(session = req_session)
 
 zeep_client = zeep.Client(wsdl = WSDL_SCHEMA_FILE_URL, transport=transport_with_basic_auth_and_cert)
@@ -75,7 +88,6 @@ zeep_client.service._binding_options["address"] = 'https://sge-homologation-b2b.
 #     nomClientFinalOuDenominationSociale: ns2:Chaine255Type,
 #     categorieClientFinalCode: ns2:ClientFinalCategorieCodeType,
 #     rechercheHorsPerimetre: xsd:boolean)
-    
 
 mes_criteres = {
     'adresseInstallation': {
@@ -89,6 +101,6 @@ mes_criteres = {
 
 # (criteres: CriteresType, loginUtilisateur: , _soapheaders={entete: entete()}) -> body: RechercherPointResponseType, header: {acquittement: acquittement()}
 
-result = zeep_client.service.rechercherPoint(criteres=mes_criteres, loginUtilisateur="homologation@cyrillugan.fr")
-print(result)
+result = zeep_client.service.rechercherPoint(criteres=mes_criteres, loginUtilisateur=conf['LOGIN'])
 
+print(result)
