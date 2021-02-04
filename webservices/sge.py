@@ -3,13 +3,17 @@
 import os
 import zeep
 import requests
+import logging
+import re
 
-class WebserviceClientFactory:
+class Session:
 
-    def __init__(self, wsdl_root, login, client_certificates, client_privkey, server_certificates, homologation=False):
+    def __init__(self, wsdl_root, login, contract_id, client_certificates, client_privkey, server_certificates, homologation=False):
         self.wsdl_root = wsdl_root
         self.login = login
         self.homologation = homologation
+        self.contract_id = contract_id
+        self.logger = logging.getLogger('sge')
 
         session = requests.Session()
         session.cert = (client_certificates, client_privkey)
@@ -26,48 +30,138 @@ class WebserviceClientFactory:
         client = zeep.Client(wsdl=wsdl_path, transport=self.transport)
 
         if self.homologation:
-            client.service._binding_options["address"] = client.service._binding_options["address"].replace(
-                'https://sge-b2b.enedis.fr', 'https://sge-homologation-b2b.enedis.fr')
+            address = client.service._binding_options["address"]
+            address = re.sub(r'^https://[^/]+/', 'https://sge-homologation-b2b.enedis.fr/', address)
+            client.service._binding_options["address"] = address
 
         return client
 
 
 class RechercherPoint:
 
-    def __init__(self, client_factory):
-        self.client_factory = client_factory
-        self.client = client_factory.make_client('Enedis.SGE.GUI.0427.B2B RecherchePointV2.0_v1.1/Services/RecherchePoint/RecherchePoint-v2.0.wsdl')
+    WSDL = 'Enedis.SGE.GUI.0427.B2B RecherchePointV2.0_v1.1/Services/RecherchePoint/RecherchePoint-v2.0.wsdl'
 
-    # ns0:CriteresType(
-    #     adresseInstallation: ns0:AdresseInstallationType,
-    #          ns0:AdresseInstallationType(
-    #             escalierEtEtageEtAppartement: ns2:AdresseAfnorLigneType,
-    #             batiment: ns2:AdresseAfnorLigneType,
-    #             numeroEtNomVoie: ns2:AdresseAfnorLigneType,
-    #             lieuDit: ns2:AdresseAfnorLigneType,
-    #             codePostal: ns2:CodePostalFrancaisType,
-    #             codeInseeCommune: ns2:CommuneFranceCodeInseeType
-    #             )
-    #     numSiret: ns2:EtablissementNumSiretType,
-    #     matriculeOuNumeroSerie: ns2:Chaine255Type,
-    #     domaineTensionAlimentationCode: ns2:DomaineTensionCodeType,
-    #     nomClientFinalOuDenominationSociale: ns2:Chaine255Type,
-    #     categorieClientFinalCode: ns2:ClientFinalCategorieCodeType,
-    #     rechercheHorsPerimetre: xsd:boolean)
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
 
-    def rechercher_point(self, criteres):
+    def rechercher(self, criteres):
         try :
-            res = self.client.service.rechercherPoint(criteres=criteres, loginUtilisateur=self.client_factory.login)
+            res = self.client.service.rechercherPoint(criteres=criteres, loginUtilisateur=self.session.login)
             # TODO read for _value_1 https://docs.python-zeep.org/en/master/datastructures.html#xsd-choice
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
                 'message': res['header']['acquittement']['resultat']['_value_1'],
-                'points': res['body']['points']['point'] if res['body']['points'] else []
+                'data': res['body']['points']['point'] if res['body']['points'] else []
             }
         except zeep.exceptions.Fault as fault:
             res = fault.detail[0][0]
             return {
                 'code': res.attrib['code'],
                 'message': res.text,
-                'points': []
+                'data': []
+            }
+
+
+class ConsultationMesures:
+
+    WSDL = 'Enedis.SGE.GUI.0455.B2B.ConsultationMesuresV1.1_v1.1.0/Services/ConsultationMesures/ConsultationMesures-v1.1.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, autorisation_client=1):
+        try :
+            res = self.client.service.consulterMesures(pointId=point_id,
+                                                       loginDemandeur=self.session.login,
+                                                       autorisationClient=autorisation_client,
+                                                       contratId=self.session.contract_id)
+
+            print(res)
+
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res['body']['point']
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': []
+            }
+
+class ConsultationMesuresDetaillees:
+
+    WSDL = "Enedis.SGE.GUI.0488.B2B.ConsultationMesuresDetailleesV2.0_v1.2.2/ConsultationMesuresDetaillees-v2.0.wsdl"
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+        # FIXME strange http URL in wsdl
+        self.client.service._binding_options["address"] = "https://sge-homologation-b2b.enedis.fr/ConsultationMesuresDetaillees/v2.0"
+
+    def consulter(self, point_id, type_code, grandeur_physique, date_debut, date_fin, soutirage=1, injection=0, mesures_corrigees=1, accord_client=1):
+        try :
+            res = self.client.service.consulterMesuresDetaillees(demande={
+                'initiateurLogin': self.session.login,
+                "pointId": point_id,
+                "mesuresTypeCode": type_code,
+                "grandeurPhysique": grandeur_physique,
+                "soutirage": soutirage,
+                "injection": injection,
+                "dateDebut": date_debut,
+                "dateFin": date_fin,
+                "accordClient": accord_client,
+                "mesuresCorrigees": mesures_corrigees
+                # !--Optional:--": ,
+                # mesuresPas": ,
+                # mesuresCorrigees": ,
+            })
+
+            print(res)
+
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res['body']['point']
+            }
+        except zeep.exceptions.Fault as fault:
+            print(fault)
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': []
+            }
+
+
+class ConsultationDonneesTechniquesContractuelles:
+
+    WSDL = 'Enedis.SGE.GUI.0464.B2B.ConsultationDonneesTechniquesContractuellesV1.0_V1.1.0/Services/ConsultationDonneesTechniquesContractuelles/ConsultationDonneesTechniquesContractuelles-v1.0.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, autorisation_client=True):
+        try :
+            res = self.client.service.consulterDonneesTechniquesContractuelles(
+                pointId=point_id,
+                loginUtilisateur=self.session.login,
+                autorisationClient=autorisation_client)
+
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res['body']['point']
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': None
             }

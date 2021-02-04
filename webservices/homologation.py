@@ -12,6 +12,8 @@ import sge
 
 parser = argparse.ArgumentParser()
 parser.add_argument("conf", help="Configuration file (typically private/*.conf.json)")
+parser.add_argument('tests', type=str, nargs='*',
+                    help='List of tests to run, like TestConsultationMesures.test_ahc_r1')
 args = parser.parse_args()
 
 logging.basicConfig()
@@ -44,17 +46,18 @@ def conf_abspath(key):
 # Made server certificate with
 # cat enedis-cert.pem SSL\ OV_Quovadis/intermdiaire/QuoVadis_OV_SSL_ICA_G3.pem  SSL\ OV_Quovadis/racine/QuoVadis_Root_CA_2_G3.pem > enedis-fullchain.pem
 
-client_factory = sge.WebserviceClientFactory(wsdl_root=conf_abspath('WSDL_FILES_ROOT'),
-                                             login=conf['LOGIN'],
-                                             client_certificates=conf_abspath('CERT_FULLCHAIN'),
-                                             client_privkey=conf_abspath('CERT_PRIVKEY'),
-                                             server_certificates='./server-fullchain.pem',
-                                             homologation=True)
+session = sge.Session(wsdl_root=conf_abspath('WSDL_FILES_ROOT'),
+                      login=conf['LOGIN'],
+                      contract_id=conf['CONTRACT_ID'],
+                      client_certificates=conf_abspath('CERT_FULLCHAIN'),
+                      client_privkey=conf_abspath('CERT_PRIVKEY'),
+                      server_certificates='./server-fullchain.pem',
+                      homologation=True)
 
 class TestRechercherPoint(unittest.TestCase):
 
     def setUp(self):
-        self.service = sge.RechercherPoint(client_factory)
+        self.service = sge.RechercherPoint(session)
 
     def test_rp_r1(self):
         """RP-R1 Recherche à partir de critères autres que les données du client
@@ -93,9 +96,9 @@ class TestRechercherPoint(unittest.TestCase):
             'categorieClientFinalCode': 'PRO'
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
-        self.assertTrue(len(res['points']) < 200)
+        self.assertTrue(len(res['data']) < 200)
 
     def test_rp_r2(self):
         """RP-R2 Recherche du N° de PRM à partir de l’adresse et du nom exact du client pour un fournisseur non titulaire du point
@@ -129,9 +132,9 @@ class TestRechercherPoint(unittest.TestCase):
             'rechercheHorsPerimetre': True
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
-        self.assertEqual(1, len(res['points']))
+        self.assertEqual(1, len(res['data']))
 
     def test_rp_r3(self):
         """RP-R3 Recherche d’un point avec adresse exacte et nom approchant
@@ -165,9 +168,9 @@ class TestRechercherPoint(unittest.TestCase):
             'rechercheHorsPerimetre': True
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
-        self.assertEqual(1, len(res['points']))
+        self.assertEqual(1, len(res['data']))
 
     def test_rp_nr1(self):
         """RP-NR1 Recherche avec des critères retournant plus de 200 points
@@ -197,7 +200,7 @@ class TestRechercherPoint(unittest.TestCase):
             'categorieClientFinalCode': 'PRO'
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('La recherche de points renvoie trop de résultats. Veuillez affiner les critères de recherche.', res['message'])
         self.assertEqual('SGT4F8', res['code'])
 
@@ -226,13 +229,12 @@ class TestRechercherPoint(unittest.TestCase):
             }
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('Les critères renseignés ne sont pas suffisants.', res['message'])
         self.assertEqual('SGT4F7', res['code'])
 
-
     def test_not_found(self):
-        """Recherche d’un point inexistant
+        """Recherche sans résultat
 
         Retourne une liste vide
         """
@@ -247,9 +249,180 @@ class TestRechercherPoint(unittest.TestCase):
             'rechercheHorsPerimetre': True
         }
 
-        res = self.service.rechercher_point(criteres)
+        res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
-        self.assertEqual(0, len(res['points']))
+        self.assertEqual(0, len(res['data']))
+
+class TestConsultationDonneesTechniques(unittest.TestCase):
+
+    def setUp(self):
+        self.service = sge.ConsultationDonneesTechniquesContractuelles(session)
+
+    def test_adp_r1(self):
+        """ADP-R1 Accès aux données d’un point pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise notamment :
+        - l’identifiant du point,
+        - le login de l’utilisateur
+        - qu’il dispose de l’autorisation client
+
+        Résultat attendu
+
+        Code retour : SGT200 – Succès. La demande est recevable. Les informations du point
+        retournées sont conformes aux règles de filtrage ICS.
+        """
+        res = self.service.consulter("98800007059999")
+        self.assertEqual('SGT200', res['code'])
+        self.assertEqual("98800007059999", res['data']['id'])
+        self.assertIsNotNone(res['data']['situationContractuelle'])
+
+    def test_adp_r2(self):
+        """ADP-R2 Accès aux données d’un point en service pour un acteur tiers sans autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise notamment :
+        - l’identifiant du point,
+        - le login de l’utilisateur
+        - qu’il ne dispose pas de l’autorisation client.
+
+        Résultat attendu
+
+        Code retour : SGT200 – Succès. La demande est recevable. Les informations du point
+        retournées sont conformes aux règles de filtrage ICS.
+        """
+        res = self.service.consulter("98800007059999", autorisation_client=False)
+        self.assertEqual('SGT200', res['code'])
+        self.assertEqual("98800007059999", res['data']['id'])
+        self.assertIsNone(res['data']['situationContractuelle'])
+
+    def test_adp_nr1(self):
+        """ADP-NR1 Accès aux données d’un point inexistant
+
+        Pré-requis
+
+        PRM inexistant dans SGE.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise :
+        - l’identifiant du point,
+        - le login de l’utilisateur
+        - qu’il dispose ou non de l’autorisation client.
+
+        Résultat attendu
+
+        Code retour : SGT401 – Demande non recevable : point inexistant.
+        """
+        res = self.service.consulter("99999999999999", autorisation_client=False)
+        self.assertEqual('Demande non recevable : point inexistant', res['message'])
+        self.assertEqual('SGT401', res['code'])
+
+class TestConsultationMesures(unittest.TestCase):
+
+    def setUp(self):
+        self.service = sge.ConsultationMesures(session)
+
+    def test_ahc_r1(self):
+        """AHC-R1 Accès à l’historique de consommations pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - l’identifiant du point,
+        - le login de l’utilisateur
+        - l’identifiant du contrat
+        - qu’il dispose de l’autorisation client.
+
+        Résultat attendu
+
+        Code retour : SGT200 – Succès. La demande est recevable. Les historiques de consommations du point sont retournés.
+        """
+        res = self.service.consulter("98800007059999")
+        self.assertEqual('SGT200', res['code'])
+
+    def test_ahc_nr1(self):
+        """AHC-NR1 Accès à l’historique de consommations pour un acteur tiers sans autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - l’identifiant du point,
+        - le login de l’utilisateur
+        - l’identifiant du contrat
+        - qu’il ne dispose pas de l’autorisation client.
+
+        Résultat attendu
+
+        Code retour : SGT4G2 − Le demandeur n'est pas éligible à la consultation des données de mesures sur le point.
+        """
+        res = self.service.consulter("98800007059999", autorisation_client=0)
+        self.assertEqual('Le demandeur n\'est pas éligible à la consultation des données de mesures sur le point.', res['message'])
+        self.assertEqual('SGT4G2', res['code'])
+
+class TestConsultationMesuresDetaillees(unittest.TestCase):
+
+    def setUp(self):
+        self.service = sge.ConsultationMesuresDetaillees(session)
+
+    def test_cmd2_r1(self):
+        """CMD2-R1 Accès à l’historique des courbes de puissance active au pas enregistré pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Disposer de l’autorisation expresse du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« COURBE »)
+        - La grandeur physique demandée (« PA »)
+        - La date de début et de fin de la consultation des mesures
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Note : la consultation des courbes est disponible pour 7 jours consécutifs au maximum dans
+        la limite des 24 derniers mois par rapport à la date du jour, limités à la dernière mise en
+        service.
+
+        Résultat attendu
+
+        Code retour : La demande est recevable. L’historique de courbe de puissances active au pas enregistré du point est affiché.
+
+        JDD
+
+        - C1-C4 30001610071843 du 01/03/2020 au 07/03/2020
+        - C5    25478147557460 du 01/03/2020 au 07/03/2020
+        """
+        res = self.service.consulter(
+            point_id=30001610071843,
+            type_code='COURBE',
+            grandeur_physique='PA',
+            soutirage=1,
+            date_debut="01/03/2020",
+            date_fin="07/03/2020")
+        self.assertEqual('SGT200', res['code'])
 
 if __name__ == '__main__':
     import sys
