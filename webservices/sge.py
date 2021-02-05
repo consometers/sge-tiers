@@ -5,6 +5,7 @@ import zeep
 import requests
 import logging
 import re
+import datetime as dt
 
 class Session:
 
@@ -36,6 +37,19 @@ class Session:
 
         return client
 
+# From Enedis.SGE.GUI.0466.Guide chapeau B2B_Tiers_v1.5.0
+# Le format utilisé dans les messages pour les dates est le type simple de date standard XML (xs:date)
+# aaaa-mm-jj[(+|-)hh:mm]
+def format_date(date):
+    utc_offset = date.strftime("%z")
+    if len(utc_offset) == 5 and utc_offset != "+0000":
+        utc_offset = utc_offset[:3] + ':' + utc_offset[3:]
+    else:
+        utc_offset = ''
+    return date.strftime("%Y-%m-%d") + utc_offset
+
+# TODO make unit test
+assert(format_date(dt.date(2020, 2, 5)) == "2020-02-05")
 
 class RechercherPoint:
 
@@ -78,12 +92,10 @@ class ConsultationMesures:
                                                        autorisationClient=autorisation_client,
                                                        contratId=self.session.contract_id)
 
-            print(res)
-
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
                 'message': res['header']['acquittement']['resultat']['_value_1'],
-                'data': res['body']['point']
+                'data': res['body']['seriesMesuresDateesGrilleTurpe']['serie']
             }
         except zeep.exceptions.Fault as fault:
             res = fault.detail[0][0]
@@ -103,9 +115,16 @@ class ConsultationMesuresDetaillees:
         # FIXME strange http URL in wsdl
         self.client.service._binding_options["address"] = "https://sge-homologation-b2b.enedis.fr/ConsultationMesuresDetaillees/v2.0"
 
-    def consulter(self, point_id, type_code, grandeur_physique, date_debut, date_fin, soutirage=1, injection=0, mesures_corrigees=1, accord_client=1):
+    def consulter(self, point_id, type_code, grandeur_physique, date_debut, date_fin, soutirage=1, injection=0, mesures_corrigees=0, accord_client=1, mesures_pas=None):
+
+        if isinstance(date_debut, (dt.date, dt.datetime)):
+            date_debut = format_date(date_debut)
+
+        if isinstance(date_fin, (dt.date, dt.datetime)):
+            date_fin = format_date(date_fin)
+
         try :
-            res = self.client.service.consulterMesuresDetaillees(demande={
+            demande = {
                 'initiateurLogin': self.session.login,
                 "pointId": point_id,
                 "mesuresTypeCode": type_code,
@@ -116,25 +135,22 @@ class ConsultationMesuresDetaillees:
                 "dateFin": date_fin,
                 "accordClient": accord_client,
                 "mesuresCorrigees": mesures_corrigees
-                # !--Optional:--": ,
-                # mesuresPas": ,
-                # mesuresCorrigees": ,
-            })
-
-            print(res)
+            }
+            if mesures_pas is not None:
+                demande['mesuresPas'] = mesures_pas
+            res = self.client.service.consulterMesuresDetaillees(demande=demande)
 
             return {
-                'code': res['header']['acquittement']['resultat']['code'],
-                'message': res['header']['acquittement']['resultat']['_value_1'],
-                'data': res['body']['point']
+                'code': None,
+                'message': None,
+                'data': res
             }
         except zeep.exceptions.Fault as fault:
-            print(fault)
             res = fault.detail[0][0]
             return {
                 'code': res.attrib['code'],
                 'message': res.text,
-                'data': []
+                'data': {}
             }
 
 

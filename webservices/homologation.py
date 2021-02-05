@@ -46,7 +46,13 @@ TEST_CASES = {
     'ConsultationMesuresDetaillees': {
         'version': 'V2.0',
         'cases': [
-            {'code': 'CMD2-R1', 'prm': '30001610071843'},
+            {'code': 'CMD2-R1',  'prm': '30001610071843'},
+            {'code': 'CMD2-R1',  'prm': '25478147557460'},
+            {'code': 'CMD2-R2',  'prm': '30001610071843'},
+            {'code': 'CMD2-R3',  'prm': '25478147557460'},
+            {'code': 'CMD2-R4',  'prm': '25478147557460'},
+            {'code': 'CMD2-NR1', 'prm': '25478147557460'},
+            {'code': 'CMD2-NR2', 'prm': '25478147557460'},
         ]
     },
     'RecherchePoint': {
@@ -503,6 +509,223 @@ class TestConsultationMesuresDetaillees(unittest.TestCase):
         self.assertEqual(prm, res['data']['pointId'])
         self.assertTrue(len(res['data']['grandeur']) > 0)
         self.assertTrue(len(res['data']['grandeur'][0]['mesure']) > 0)
+        return res
+
+    def test_cmd2_r2(self, prm="30001610071843"):
+        """CMD2-R2 Accès à l’historique des courbes de puissance réactive inductive au pas enregistré pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Disposer de l’autorisation expresse du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« COURBE »)
+        - La grandeur physique demandée (« PRI »)
+        - La date de début et de fin de la consultation des mesures
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Note : la consultation des courbes est disponible pour 7 jours consécutifs au maximum dans
+        la limite des 24 derniers mois par rapport à la date du jour, limités à la dernière mise en
+        service.
+
+        Résultat attendu
+
+        Code retour : La demande est recevable. L’historique de courbe des puissances réactives au pas enregistré du point est affiché.
+        JDD
+
+        - C1-C4 30001610071843 du 01/03/2020 au 07/03/2020
+        """
+        res = self.service.consulter(
+            point_id=prm,
+            type_code='COURBE',
+            grandeur_physique='PRI',
+            soutirage=1,
+            date_debut=dt.date(2020, 3, 1),
+            date_fin=dt.date(2020, 3, 7))
+
+        self.assertEqual(prm, res['data']['pointId'])
+        self.assertTrue(len(res['data']['grandeur']) > 0)
+        self.assertTrue(len(res['data']['grandeur'][0]['mesure']) > 0)
+        return res
+
+    def test_cmd2_r3(self, prm="25478147557460"):
+        """CMD2-R3 Accès à l’historique des énergies globales quotidiennes pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Disposer de l’autorisation expresse du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« ENERGIE »)
+        - La grandeur physique demandée (« EA »)
+        - La date de début et de fin de la consultation des mesures
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Note : la consultation des énergies globales quotidiennes est disponible sur une profondeur
+        d’historique de 36 mois maximum, par rapport à la date du jour, limitée par la date de
+        dernière mise en service.
+
+        Résultat attendu
+
+        Code retour : La demande est recevable. Les historiques d’énergies globales quotidiennes du point sont affichés.
+
+        JDD
+
+        - C5 25478147557460 du 01/03/2020 au 07/03/2020
+        """
+        res = self.service.consulter(
+            point_id=prm,
+            type_code='ENERGIE',
+            grandeur_physique='EA',
+            soutirage=1,
+            date_debut=dt.date(2020, 3, 1),
+            date_fin=dt.date(2020, 3, 7))
+
+        self.assertEqual(prm, res['data']['pointId'])
+        self.assertTrue(len(res['data']['grandeur']) > 0)
+        self.assertTrue(len(res['data']['grandeur'][0]['mesure']) > 0)
+        return res
+
+
+
+    def test_cmd2_r4(self, prm="25478147557460"):
+        """CMD2-R4 Accès à l’historique de puissances maximales quotidiennes ou mensuelles pour un acteur tiers avec une autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Disposer de l’autorisation expresse du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« PMAX »)
+        - La grandeur physique demandée (« PMA »)
+        - Le pas souhaité (P1D pour un pas quotidien, P1M pour un pas mensuel)
+        - La date de début et de fin de la consultation des mesures
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Note : la consultation des puissances maximales quotidiennes est disponible sur une
+        profondeur d’historique de 36 mois maximum, par rapport à la date du jour, limitée par la
+        date de dernière mise en service.
+
+        Résultat attendu
+
+        Code retour : La demande est recevable. Les historiques des puissances maximales quotidiennes ou mensuelles du point sont affichés.
+
+        JDD
+
+        - C5 25478147557460 du 01/01/2020 au 01/02/2020
+        """
+        res = self.service.consulter(
+            point_id=prm,
+            type_code='PMAX',
+            grandeur_physique='PMA',
+            soutirage=1,
+            date_debut=dt.date(2020, 1, 1),
+            date_fin=dt.date(2020, 2, 1),
+            mesures_pas="P1D")
+
+        self.assertEqual(prm, res['data']['pointId'])
+        self.assertTrue(len(res['data']['grandeur']) > 0)
+        self.assertTrue(len(res['data']['grandeur'][0]['mesure']) > 0)
+        return res
+
+    def test_cmd2_nr1(self, prm="25478147557460"):
+        """CMD2-NR2 Accès à l’historique de courbe de puissance active dont la profondeur maximale (7 jours) n’est pas respectée
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Disposer de l’autorisation expresse du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« COURBE »)
+        - La grandeur physique demandée (« PA »)
+        - Une date de début et de fin ne respectant pas la profondeur maximale de 7 jours
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Résultat attendu
+
+        Code retour : SGT4L8 – La durée demandée n’est pas compatible avec le type de mesure demandé
+        La demande est non passante car l’acteur tiers a demandé une profondeur d’historique de
+        courbe dépassant les 7 jours autorisés pour ce service.
+
+        JDD
+
+        - C5 25478147557460 du 01/01/2020 au 09/01/2020
+        """
+        res = self.service.consulter(
+            point_id=prm,
+            type_code='COURBE',
+            grandeur_physique='PA',
+            soutirage=1,
+            date_debut=dt.date(2020, 1, 1),
+            date_fin=dt.date(2020, 1, 9))
+
+        self.assertEqual('La durée demandée n’est pas compatible avec le type de mesure demandé', res['message'])
+        self.assertEqual('SGT4L8', res['code'])
+        return res
+
+    def test_cmd2_nr2(self, prm="25478147557460"):
+        """CMD2-NR2 Accès à l’historique des énergies globales quotidiennes d’un point pour un acteur tiers sans autorisation client
+
+        Pré-requis
+
+        Le PRM est en service.
+
+        Descriptif
+
+        Dans sa demande, l’acteur tiers précise:
+        - L’identifiant du point,
+        - Le login de l’utilisateur
+        - Ne pas disposer de l’autorisation du client
+        - Si la demande concerne des points en soutirage ou en injection
+        - Le type de mesure (« ENERGIE »)
+        - La grandeur physique demandée (« EA »)
+        - La date de début et de fin de la consultation des mesures
+      - S’il souhaite des mesures brutes ou corrigées (uniquement brutes pour le C5 et le P4)
+
+        Résultat attendu
+
+        Code retour : SGT4K2 – Le client doit avoir donné son accord pour la transmission de ses données de mesure.
+        La demande est non recevable car l’acteur tiers doit avoir l’accord du client pour accéder aux données.
+
+        JDD
+
+        - C5 25478147557460 du 01/01/2020 au 07/01/2020
+        """
+        res = self.service.consulter(
+            point_id=prm,
+            type_code='ENERGIE',
+            grandeur_physique='EA',
+            soutirage=1,
+            date_debut=dt.date(2020, 1, 1),
+            date_fin=dt.date(2020, 1, 9),
+            accord_client=0)
+
+        self.assertEqual('Le client doit avoir donné son accord pour la transmission de ses données de mesure.', res['message'])
+        self.assertEqual('SGT4K2', res['code'])
         return res
 
 def run_test_with_args(webservice_name, test_name=None, test_code=None, arguments={}):
