@@ -7,6 +7,9 @@ import argparse
 import unittest
 import logging.config
 import json
+import datetime as dt
+import csv
+import sys
 
 import sge
 
@@ -15,6 +18,48 @@ parser.add_argument("conf", help="Configuration file (typically private/*.conf.j
 parser.add_argument('tests', type=str, nargs='*',
                     help='List of tests to run, like TestConsultationMesures.test_ahc_r1')
 args = parser.parse_args()
+
+
+# Cas de tests basés sur le document
+# Enedis.SGE.REF.0465.Homologation_Liste des cas fonctionnels_Tiers_SGE21.1_v1.0
+# Le rapport sera créé dans l’ordre des tests suivants
+
+TEST_CASES = {
+    'ConsultationDonneesTechniquesContractuelles': {
+        'version': 'V1.0',
+        'cases': [
+            {'code': 'ADP-R1',  'prm': '98800007059999'},
+            {'code': 'ADP-R1',  'prm': '25946599093143'},
+            {'code': 'ADP-R2',  'prm': '98800007059999'},
+            {'code': 'ADP-R2',  'prm': '25946599093143'},
+            {'code': 'ADP-NR1', 'prm': '99999999999999'},
+        ]
+    },
+    'ConsultationMesures': {
+        'version': 'V1.1',
+        'cases': [
+            {'code': 'AHC-R1',  'prm': '98800007059999'},
+            {'code': 'AHC-R1',  'prm': '25110853825340'},
+            {'code': 'AHC-NR1', 'prm': '98800007059999'},
+        ]
+    },
+    'ConsultationMesuresDetaillees': {
+        'version': 'V2.0',
+        'cases': [
+            {'code': 'CMD2-R1', 'prm': '30001610071843'},
+        ]
+    },
+    'RecherchePoint': {
+        'version': 'V2.0',
+        'cases': [
+            {'code': 'RP-R1'},
+            {'code': 'RP-R2'},
+            {'code': 'RP-R3'},
+            {'code': 'RP-NR1'},
+            {'code': 'RP-NR1'}
+        ]
+    },
+}
 
 logging.basicConfig()
 debug = []
@@ -54,10 +99,15 @@ session = sge.Session(wsdl_root=conf_abspath('WSDL_FILES_ROOT'),
                       server_certificates='./server-fullchain.pem',
                       homologation=True)
 
-class TestRechercherPoint(unittest.TestCase):
+class TestRecherchePoint(unittest.TestCase):
 
     def setUp(self):
         self.service = sge.RechercherPoint(session)
+
+    def test_name_and_version(self, version="V2.0"):
+        expected_name = type(self).__name__[4:] + version
+        services = list(self.service.client.wsdl.services.values())
+        self.assertEqual(expected_name, services[0].name)
 
     def test_rp_r1(self):
         """RP-R1 Recherche à partir de critères autres que les données du client
@@ -99,6 +149,7 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
         self.assertTrue(len(res['data']) < 200)
+        return res
 
     def test_rp_r2(self):
         """RP-R2 Recherche du N° de PRM à partir de l’adresse et du nom exact du client pour un fournisseur non titulaire du point
@@ -135,6 +186,7 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
         self.assertEqual(1, len(res['data']))
+        return res
 
     def test_rp_r3(self):
         """RP-R3 Recherche d’un point avec adresse exacte et nom approchant
@@ -171,6 +223,7 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
         self.assertEqual(1, len(res['data']))
+        return res
 
     def test_rp_nr1(self):
         """RP-NR1 Recherche avec des critères retournant plus de 200 points
@@ -203,6 +256,7 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('La recherche de points renvoie trop de résultats. Veuillez affiner les critères de recherche.', res['message'])
         self.assertEqual('SGT4F8', res['code'])
+        return res
 
     def test_rp_nr2(self):
         """RP-NR2 Recherche avec des critères insuffisants
@@ -232,6 +286,7 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('Les critères renseignés ne sont pas suffisants.', res['message'])
         self.assertEqual('SGT4F7', res['code'])
+        return res
 
     def test_not_found(self):
         """Recherche sans résultat
@@ -252,13 +307,19 @@ class TestRechercherPoint(unittest.TestCase):
         res = self.service.rechercher(criteres)
         self.assertEqual('SGT200', res['code'])
         self.assertEqual(0, len(res['data']))
+        return res
 
-class TestConsultationDonneesTechniques(unittest.TestCase):
+class TestConsultationDonneesTechniquesContractuelles(unittest.TestCase):
 
     def setUp(self):
         self.service = sge.ConsultationDonneesTechniquesContractuelles(session)
 
-    def test_adp_r1(self):
+    def test_name_and_version(self, version="V1.0"):
+        expected_name = type(self).__name__[4:] + version
+        services = list(self.service.client.wsdl.services.values())
+        self.assertEqual(expected_name, services[0].name)
+
+    def test_adp_r1(self, prm="98800007059999"):
         """ADP-R1 Accès aux données d’un point pour un acteur tiers avec une autorisation client
 
         Pré-requis
@@ -277,12 +338,13 @@ class TestConsultationDonneesTechniques(unittest.TestCase):
         Code retour : SGT200 – Succès. La demande est recevable. Les informations du point
         retournées sont conformes aux règles de filtrage ICS.
         """
-        res = self.service.consulter("98800007059999")
+        res = self.service.consulter(prm)
         self.assertEqual('SGT200', res['code'])
-        self.assertEqual("98800007059999", res['data']['id'])
+        self.assertEqual(prm, res['data']['id'])
         self.assertIsNotNone(res['data']['situationContractuelle'])
+        #return res # FIXME
 
-    def test_adp_r2(self):
+    def test_adp_r2(self, prm):
         """ADP-R2 Accès aux données d’un point en service pour un acteur tiers sans autorisation client
 
         Pré-requis
@@ -301,12 +363,13 @@ class TestConsultationDonneesTechniques(unittest.TestCase):
         Code retour : SGT200 – Succès. La demande est recevable. Les informations du point
         retournées sont conformes aux règles de filtrage ICS.
         """
-        res = self.service.consulter("98800007059999", autorisation_client=False)
+        res = self.service.consulter(prm, autorisation_client=False)
         self.assertEqual('SGT200', res['code'])
-        self.assertEqual("98800007059999", res['data']['id'])
+        self.assertEqual(prm, res['data']['id'])
         self.assertIsNone(res['data']['situationContractuelle'])
+        return res
 
-    def test_adp_nr1(self):
+    def test_adp_nr1(self, prm="99999999999999"):
         """ADP-NR1 Accès aux données d’un point inexistant
 
         Pré-requis
@@ -324,16 +387,22 @@ class TestConsultationDonneesTechniques(unittest.TestCase):
 
         Code retour : SGT401 – Demande non recevable : point inexistant.
         """
-        res = self.service.consulter("99999999999999", autorisation_client=False)
+        res = self.service.consulter(prm, autorisation_client=False)
         self.assertEqual('Demande non recevable : point inexistant', res['message'])
         self.assertEqual('SGT401', res['code'])
+        return res
 
 class TestConsultationMesures(unittest.TestCase):
 
     def setUp(self):
         self.service = sge.ConsultationMesures(session)
 
-    def test_ahc_r1(self):
+    def test_name_and_version(self, version="V1.1"):
+        expected_name = type(self).__name__[4:] + version
+        services = list(self.service.client.wsdl.services.values())
+        self.assertEqual(expected_name, services[0].name)
+
+    def test_ahc_r1(self, prm="98800007059999"):
         """AHC-R1 Accès à l’historique de consommations pour un acteur tiers avec une autorisation client
 
         Pré-requis
@@ -352,10 +421,11 @@ class TestConsultationMesures(unittest.TestCase):
 
         Code retour : SGT200 – Succès. La demande est recevable. Les historiques de consommations du point sont retournés.
         """
-        res = self.service.consulter("98800007059999")
+        res = self.service.consulter(prm)
         self.assertEqual('SGT200', res['code'])
+        return res
 
-    def test_ahc_nr1(self):
+    def test_ahc_nr1(self, prm="98800007059999"):
         """AHC-NR1 Accès à l’historique de consommations pour un acteur tiers sans autorisation client
 
         Pré-requis
@@ -374,16 +444,23 @@ class TestConsultationMesures(unittest.TestCase):
 
         Code retour : SGT4G2 − Le demandeur n'est pas éligible à la consultation des données de mesures sur le point.
         """
-        res = self.service.consulter("98800007059999", autorisation_client=0)
+        res = self.service.consulter(prm, autorisation_client=0)
         self.assertEqual('Le demandeur n\'est pas éligible à la consultation des données de mesures sur le point.', res['message'])
         self.assertEqual('SGT4G2', res['code'])
+        return res
 
 class TestConsultationMesuresDetaillees(unittest.TestCase):
 
     def setUp(self):
         self.service = sge.ConsultationMesuresDetaillees(session)
 
-    def test_cmd2_r1(self):
+    def test_name_and_version(self, version="V2.0"):
+        # FIXME, service name does not match, does not include version
+        expected_name = "AdamConsultationMesuresServiceRead"
+        services = list(self.service.client.wsdl.services.values())
+        self.assertEqual(expected_name, services[0].name)
+
+    def test_cmd2_r1(self, prm="30001610071843"):
         """CMD2-R1 Accès à l’historique des courbes de puissance active au pas enregistré pour un acteur tiers avec une autorisation client
 
         Pré-requis
@@ -416,14 +493,81 @@ class TestConsultationMesuresDetaillees(unittest.TestCase):
         - C5    25478147557460 du 01/03/2020 au 07/03/2020
         """
         res = self.service.consulter(
-            point_id=30001610071843,
+            point_id=prm,
             type_code='COURBE',
             grandeur_physique='PA',
             soutirage=1,
-            date_debut="01/03/2020",
-            date_fin="07/03/2020")
-        self.assertEqual('SGT200', res['code'])
+            date_debut=dt.date(2020, 3, 1),
+            date_fin=dt.date(2020, 3, 7))
+
+        self.assertEqual(prm, res['data']['pointId'])
+        self.assertTrue(len(res['data']['grandeur']) > 0)
+        self.assertTrue(len(res['data']['grandeur'][0]['mesure']) > 0)
+        return res
+
+def run_test_with_args(webservice_name, test_name=None, test_code=None, arguments={}):
+
+    test_class_name = "Test" + webservice_name
+    test_class = getattr(sys.modules[__name__], test_class_name, None)
+    if test_class is None:
+        raise RuntimeError(test_class_name + " is not defined")
+
+    test_case = test_class()
+
+    if test_name is None:
+        test_name = 'test_' + test_code.lower().replace('-', '_')
+
+    test_method = getattr(test_case, test_name, None)
+
+    if test_method is None:
+        raise RuntimeError(test_class_name + "." + test_name + " is not defined")
+
+    test_case.setUp()
+    return test_method(**arguments)
+
+def make_homologation_report():
+
+    errors = []
+    output = csv.writer(sys.stdout)
+
+    for webservice, params in TEST_CASES.items():
+
+        run_test_with_args(webservice,
+                           test_name='test_name_and_version',
+                           arguments={'version': params['version']})
+
+        for case in params['cases']:
+            args = case.copy()
+            code = args.pop('code')
+            try:
+                res = run_test_with_args(webservice, test_code=code, arguments=args)
+                if res != None:
+                    output_name = [code]
+                    output_name += [name + value for name, value in args.items()]
+                    output_name = "_".join(output_name)
+                    output_name = os.path.join('test_case_outputs', output_name + '.txt')
+                    os.makedirs(os.path.dirname(output_name), exist_ok=True)
+                    with open(output_name, 'w+') as f:
+                        f.write(str(res))
+                date = dt.datetime.now().strftime("%d/%m/%Y %H:%M")
+            except AssertionError as e:
+                date = "FAIL"
+                errors.append({'webservice': webservice, 'code': code, 'error': e})
+            output.writerow([webservice, code, date, repr(args)])
+
+    for error in errors:
+        sys.stderr.write(f"--------\n")
+        sys.stderr.write(f"{error['code']} FAILED ({error['webservice']})\n")
+        sys.stderr.write(str(error['error']))
+
 
 if __name__ == '__main__':
     import sys
-    unittest.main(argv=sys.argv[1:])
+    # unittest.main(argv=sys.argv[1:])
+
+    # suite = unittest.TestSuite()
+    # suite.addTest(TestConsultationDonneesTechniques('adp_r1', "98800007059999"))
+    # suite.addTest(TestConsultationDonneesTechniques('adp_r2', "25946599093143"))
+    # unittest.TextTestRunner(verbosity=2).run(suite)
+
+    make_homologation_report()
