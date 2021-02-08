@@ -6,6 +6,8 @@ import requests
 import logging
 import re
 import datetime as dt
+import time
+import threading
 
 class Session:
 
@@ -22,6 +24,11 @@ class Session:
 
         self.transport = zeep.transports.Transport(session=session)
 
+        # It is forbidden to call webservices more than once / sec in homologation
+        # TODO add to docs
+        # TODO check limit for non homologation
+        self.throttle = Throttle(1.0)
+
     def make_client(self, wsdl):
 
         wsdl_path = os.path.join(self.wsdl_root, wsdl)
@@ -36,6 +43,24 @@ class Session:
             client.service._binding_options["address"] = address
 
         return client
+
+class Throttle:
+
+    def __init__(self, time_between_calls, time_provider=time.monotonic):
+        self.time_between_calls = time_between_calls
+        self.time_provider = time_provider
+        self.next_possible_call_at = self.time_provider()
+        self.mutex = threading.Lock()
+
+    def __enter__(self):
+        self.mutex.acquire()
+        delay = self.next_possible_call_at - self.time_provider()
+        if delay > 0:
+            time.sleep(delay)
+
+    def __exit__(self, type, value, traceback):
+        self.next_possible_call_at = self.time_provider() + self.time_between_calls
+        self.mutex.release()
 
 # From Enedis.SGE.GUI.0466.Guide chapeau B2B_Tiers_v1.5.0
 # Le format utilisé dans les messages pour les dates est le type simple de date standard XML (xs:date)
@@ -61,7 +86,8 @@ class RechercherPoint:
 
     def rechercher(self, criteres):
         try :
-            res = self.client.service.rechercherPoint(criteres=criteres, loginUtilisateur=self.session.login)
+            with self.session.throttle:
+                res = self.client.service.rechercherPoint(criteres=criteres, loginUtilisateur=self.session.login)
             # TODO read for _value_1 https://docs.python-zeep.org/en/master/datastructures.html#xsd-choice
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
@@ -87,10 +113,11 @@ class ConsultationMesures:
 
     def consulter(self, point_id, autorisation_client=1):
         try :
-            res = self.client.service.consulterMesures(pointId=point_id,
-                                                       loginDemandeur=self.session.login,
-                                                       autorisationClient=autorisation_client,
-                                                       contratId=self.session.contract_id)
+            with self.session.throttle:
+                res = self.client.service.consulterMesures(pointId=point_id,
+                                                           loginDemandeur=self.session.login,
+                                                           autorisationClient=autorisation_client,
+                                                           contratId=self.session.contract_id)
 
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
@@ -138,7 +165,8 @@ class ConsultationMesuresDetaillees:
             }
             if mesures_pas is not None:
                 demande['mesuresPas'] = mesures_pas
-            res = self.client.service.consulterMesuresDetaillees(demande=demande)
+            with self.session.throttle:
+                res = self.client.service.consulterMesuresDetaillees(demande=demande)
 
             return {
                 'code': None,
@@ -164,10 +192,11 @@ class ConsultationDonneesTechniquesContractuelles:
 
     def consulter(self, point_id, autorisation_client=True):
         try :
-            res = self.client.service.consulterDonneesTechniquesContractuelles(
-                pointId=point_id,
-                loginUtilisateur=self.session.login,
-                autorisationClient=autorisation_client)
+            with self.session.throttle:
+                res = self.client.service.consulterDonneesTechniquesContractuelles(
+                    pointId=point_id,
+                    loginUtilisateur=self.session.login,
+                    autorisationClient=autorisation_client)
 
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
