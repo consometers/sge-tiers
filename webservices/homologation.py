@@ -62,7 +62,7 @@ TEST_CASES = {
             {'code': 'RP-R2'},
             {'code': 'RP-R3'},
             {'code': 'RP-NR1'},
-            {'code': 'RP-NR1'}
+            {'code': 'RP-NR2'}
         ]
     },
 }
@@ -252,10 +252,9 @@ class TestRecherchePoint(unittest.TestCase):
 
         criteres = {
             'adresseInstallation': {
-                'codePostal': 75001,
-                'codeInseeCommune': 75101,
+                'codePostal': 13100,
+                'codeInseeCommune': 13001,
                 },
-            'domaineTensionAlimentationCode': 'BTINF',
             'categorieClientFinalCode': 'PRO'
         }
 
@@ -284,7 +283,7 @@ class TestRecherchePoint(unittest.TestCase):
 
         criteres = {
             'adresseInstallation': {
-                'codeInseeCommune': 75101,
+                'codeInseeCommune': 13001,
                 'numeroEtNomVoie': '16 RUE DES MENUDIERES',
             }
         }
