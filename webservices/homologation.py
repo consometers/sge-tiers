@@ -15,8 +15,9 @@ import sge
 
 parser = argparse.ArgumentParser()
 parser.add_argument("conf", help="Configuration file (typically private/*.conf.json)")
+parser.add_argument('--report', action='store_true', help="Generate data for an homologation (does not run all unit tests)")
 parser.add_argument('tests', type=str, nargs='*',
-                    help='List of tests to run, like TestConsultationMesures.test_ahc_r1')
+                    help='List of tests to run, like TestConsultationMesures.test_ahc_r1 for unit tests or AHC-R1 for homologation report')
 args = parser.parse_args()
 
 
@@ -349,7 +350,7 @@ class TestConsultationDonneesTechniquesContractuelles(unittest.TestCase):
         self.assertIsNotNone(res['data']['situationContractuelle'])
         #return res # FIXME
 
-    def test_adp_r2(self, prm):
+    def test_adp_r2(self, prm="98800007059999"):
         """ADP-R2 Accès aux données d’un point en service pour un acteur tiers sans autorisation client
 
         Pré-requis
@@ -747,7 +748,7 @@ def run_test_with_args(webservice_name, test_name=None, test_code=None, argument
     test_case.setUp()
     return test_method(**arguments)
 
-def make_homologation_report():
+def make_homologation_report(only_those_cases=None):
 
     errors = []
     output = csv.writer(sys.stdout)
@@ -761,6 +762,8 @@ def make_homologation_report():
         for case in params['cases']:
             args = case.copy()
             code = args.pop('code')
+            if only_those_cases and not (code in only_those_cases):
+                continue
             try:
                 res = run_test_with_args(webservice, test_code=code, arguments=args)
                 if res != None:
@@ -785,11 +788,8 @@ def make_homologation_report():
 
 if __name__ == '__main__':
     import sys
-    # unittest.main(argv=sys.argv[1:])
 
-    # suite = unittest.TestSuite()
-    # suite.addTest(TestConsultationDonneesTechniques('adp_r1', "98800007059999"))
-    # suite.addTest(TestConsultationDonneesTechniques('adp_r2', "25946599093143"))
-    # unittest.TextTestRunner(verbosity=2).run(suite)
-
-    make_homologation_report()
+    if args.report:
+        make_homologation_report(set(args.tests))
+    else:
+        unittest.main(argv=sys.argv[1:])
