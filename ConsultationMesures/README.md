@@ -17,7 +17,7 @@ Historique des consommations restituées sur la grille Distributeur et/ou la gri
 
 ## Exemple point du segment C5 migré dans la nouvelle chaîne
 
-PRM anonymisé 09111642617347
+PRM anonymisé: [09111642617347](/prms.md#09111642617347).
 
 Requête :
 
