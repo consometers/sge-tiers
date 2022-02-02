@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns3:consulterMesuresDetailleesResponse xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/v2.0">
+      <pointId>09111642617347</pointId>
+      <mesuresCorrigees>BRUT</mesuresCorrigees>
+      <periode>
+        <dateDebut>2022-01-05</dateDebut>
+        <dateFin>2022-01-12</dateFin>
+      </periode>
+      <grandeur>
+        <grandeurMetier>CONS</grandeurMetier>
+        <grandeurPhysique>EA</grandeurPhysique>
+        <unite>Wh</unite>
+        <mesure>
+          <v>20711</v>
+          <d>2022-01-05T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>24217</v>
+          <d>2022-01-06T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>29256</v>
+          <d>2022-01-07T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>29355</v>
+          <d>2022-01-08T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>25514</v>
+          <d>2022-01-09T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>24020</v>
+          <d>2022-01-10T00:00:00.000+01:00</d>
+        </mesure>
+        <mesure>
+          <v>23512</v>
+          <d>2022-01-11T00:00:00.000+01:00</d>
+        </mesure>
+      </grandeur>
+    </ns3:consulterMesuresDetailleesResponse>
+  </soap:Body>
+</soap:Envelope>
