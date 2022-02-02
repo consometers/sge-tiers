@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <ns4:acquittement xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/commandercollectepublicationmesures/v3.0">
+      <resultat code="SGT200">Succès</resultat>
+      <infoFonctionnelles>
+        <pointId>30001642617347</pointId>
+        <affaireId>M02SXIHK</affaireId>
+      </infoFonctionnelles>
+      <infoDemandeur>
+        <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+      </infoDemandeur>
+    </ns4:acquittement>
+  </soap:Header>
+  <soap:Body>
+    <ns3:commanderCollectePublicationMesuresResponse xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/commandercollectepublicationmesures/v3.0">
+      <affaireId>M02SXIHK</affaireId>
+      <prestations>
+        <prestation>
+          <rang>1</rang>
+          <fiche code="F300B">
+            <libelle>Collecte et transmission récurrente de la courbe de charge</libelle>
+          </fiche>
+          <option code="F300BO1">
+            <libelle>Transmission récurrente</libelle>
+          </option>
+        </prestation>
+      </prestations>
+      <serviceSouscritId>64697659</serviceSouscritId>
+    </ns3:commanderCollectePublicationMesuresResponse>
+  </soap:Body>
+</soap:Envelope>
