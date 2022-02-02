@@ -1,0 +1,470 @@
+<?xml version="1.0" ?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <v1:acquittement xmlns:v1="http://www.enedis.fr/sge/b2b/technique/v1.0">
+      <resultat code="SGT200">Succès</resultat>
+      <infoFonctionnelles>
+        <pointId>09111642617347</pointId>
+      </infoFonctionnelles>
+      <infoDemandeur>
+        <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+      </infoDemandeur>
+    </v1:acquittement>
+  </soapenv:Header>
+  <soapenv:Body>
+    <v1:consulterMesuresResponse xmlns:v1="http://www.enedis.fr/sge/b2b/services/consultermesures/v1.1">
+      <seriesMesuresDateesGrilleTurpe>
+        <serie>
+          <grandeurPhysique code="EA">
+            <libelle>Energie Active</libelle>
+          </grandeurPhysique>
+          <classeTemporelle code="BASE">
+            <libelle>Base</libelle>
+          </classeTemporelle>
+          <calendrier code="DI000001">
+            <libelle>Base</libelle>
+          </calendrier>
+          <unite>kWh</unite>
+          <mesuresDatees>
+            <mesure>
+              <valeur>775</valeur>
+              <dateDebut>2021-12-06</dateDebut>
+              <dateFin>2022-01-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>666</valeur>
+              <dateDebut>2021-11-06</dateDebut>
+              <dateFin>2021-12-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>573</valeur>
+              <dateDebut>2021-10-06</dateDebut>
+              <dateFin>2021-11-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>484</valeur>
+              <dateDebut>2021-09-06</dateDebut>
+              <dateFin>2021-10-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>542</valeur>
+              <dateDebut>2021-08-06</dateDebut>
+              <dateFin>2021-09-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>462</valeur>
+              <dateDebut>2021-07-06</dateDebut>
+              <dateFin>2021-08-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>471</valeur>
+              <dateDebut>2021-06-06</dateDebut>
+              <dateFin>2021-07-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>670</valeur>
+              <dateDebut>2021-05-06</dateDebut>
+              <dateFin>2021-06-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>995</valeur>
+              <dateDebut>2021-04-06</dateDebut>
+              <dateFin>2021-05-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>1126</valeur>
+              <dateDebut>2021-03-06</dateDebut>
+              <dateFin>2021-04-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>1114</valeur>
+              <dateDebut>2021-02-06</dateDebut>
+              <dateFin>2021-03-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>926</valeur>
+              <dateDebut>2021-01-15</dateDebut>
+              <dateFin>2021-02-06</dateFin>
+              <nature code="REGU">
+                <libelle>Régularisée</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>30</valeur>
+              <dateDebut>2021-01-11</dateDebut>
+              <dateFin>2021-01-15</dateFin>
+              <nature code="ESTI">
+                <libelle>Estimée</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+          </mesuresDatees>
+        </serie>
+      </seriesMesuresDateesGrilleTurpe>
+      <seriesMesuresDateesGrilleFrn>
+        <serie>
+          <grandeurPhysique code="EA">
+            <libelle>Energie Active</libelle>
+          </grandeurPhysique>
+          <classeTemporelle code="BASE">
+            <libelle>BASE</libelle>
+          </classeTemporelle>
+          <calendrier code="HoroF1">
+            <libelle>HoroF1</libelle>
+          </calendrier>
+          <unite>kWh</unite>
+          <mesuresDatees>
+            <mesure>
+              <valeur>1986</valeur>
+              <dateDebut>2020-11-06</dateDebut>
+              <dateFin>2021-01-07</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="EVENEMENT">
+                <libelle>Publication événementielle</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>310</valeur>
+              <dateDebut>2020-10-20</dateDebut>
+              <dateFin>2020-11-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+          </mesuresDatees>
+        </serie>
+        <serie>
+          <grandeurPhysique code="EA">
+            <libelle>Energie Active</libelle>
+          </grandeurPhysique>
+          <classeTemporelle code="BASE">
+            <libelle>BASE</libelle>
+          </classeTemporelle>
+          <calendrier code="FC000165">
+            <libelle>FC000165</libelle>
+          </calendrier>
+          <unite>kWh</unite>
+          <mesuresDatees>
+            <mesure>
+              <valeur>775</valeur>
+              <dateDebut>2021-12-06</dateDebut>
+              <dateFin>2022-01-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>666</valeur>
+              <dateDebut>2021-11-06</dateDebut>
+              <dateFin>2021-12-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>573</valeur>
+              <dateDebut>2021-10-06</dateDebut>
+              <dateFin>2021-11-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>484</valeur>
+              <dateDebut>2021-09-06</dateDebut>
+              <dateFin>2021-10-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>542</valeur>
+              <dateDebut>2021-08-06</dateDebut>
+              <dateFin>2021-09-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>462</valeur>
+              <dateDebut>2021-07-06</dateDebut>
+              <dateFin>2021-08-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>471</valeur>
+              <dateDebut>2021-06-06</dateDebut>
+              <dateFin>2021-07-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>670</valeur>
+              <dateDebut>2021-05-06</dateDebut>
+              <dateFin>2021-06-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>995</valeur>
+              <dateDebut>2021-04-06</dateDebut>
+              <dateFin>2021-05-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>1126</valeur>
+              <dateDebut>2021-03-06</dateDebut>
+              <dateFin>2021-04-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>1114</valeur>
+              <dateDebut>2021-02-06</dateDebut>
+              <dateFin>2021-03-06</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>926</valeur>
+              <dateDebut>2021-01-15</dateDebut>
+              <dateFin>2021-02-06</dateFin>
+              <nature code="REGU">
+                <libelle>Régularisée</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>30</valeur>
+              <dateDebut>2021-01-11</dateDebut>
+              <dateFin>2021-01-15</dateFin>
+              <nature code="ESTI">
+                <libelle>Estimée</libelle>
+              </nature>
+              <declencheur code="CYCLIQUE">
+                <libelle>Publication cyclique</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+            <mesure>
+              <valeur>195</valeur>
+              <dateDebut>2021-01-07</dateDebut>
+              <dateFin>2021-01-11</dateFin>
+              <nature code="REEL">
+                <libelle>Réelle</libelle>
+              </nature>
+              <declencheur code="EVENEMENT">
+                <libelle>Publication événementielle</libelle>
+              </declencheur>
+              <statut code="INITIALE">
+                <libelle>Initiale</libelle>
+              </statut>
+            </mesure>
+          </mesuresDatees>
+        </serie>
+      </seriesMesuresDateesGrilleFrn>
+    </v1:consulterMesuresResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
