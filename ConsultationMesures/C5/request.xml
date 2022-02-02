@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tec="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns0="http://www.enedis.fr/sge/b2b/services/consultermesures/v1.1" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header>
+        <tec:entete>
+            <version>1.1</version>
+            <infoDemandeur>
+                <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+            </infoDemandeur>
+        </tec:entete>
+    </SOAP-ENV:Header>
+    <ns1:Body>
+        <ns0:consulterMesures>
+            <pointId>09111642617347</pointId>
+            <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+            <contratId>2617347</contratId>
+            <autorisationClient>true</autorisationClient>
+        </ns0:consulterMesures>
+    </ns1:Body>
+</SOAP-ENV:Envelope>
