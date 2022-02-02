@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/v2.0">
+  <SOAP-ENV:Header/>
+  <ns0:Body>
+    <ns1:consulterMesuresDetaillees>
+      <demande>
+        <initiateurLogin>sge-tiers@votre-entreprise.fr</initiateurLogin>
+        <pointId>09111642617347</pointId>
+        <mesuresTypeCode>COURBE</mesuresTypeCode>
+        <grandeurPhysique>PA</grandeurPhysique>
+        <soutirage>true</soutirage>
+        <injection>false</injection>
+        <dateDebut>2022-01-05</dateDebut>
+        <dateFin>2022-01-12</dateFin>
+        <mesuresCorrigees>false</mesuresCorrigees>
+        <accordClient>true</accordClient>
+      </demande>
+    </ns1:consulterMesuresDetaillees>
+  </ns0:Body>
+</SOAP-ENV:Envelope>
