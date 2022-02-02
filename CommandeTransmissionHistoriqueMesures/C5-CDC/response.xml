@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Header xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <dc:acquittementP xmlns:dc="http://www.erdf.fr/sge/b2b/dictionnaire/v4.0/dc">
+      <resultat code="SGT200">Succès</resultat>
+      <infoFonctionnelles>
+        <pointId>09111642617347</pointId>
+      </infoFonctionnelles>
+      <infoDemandeur>
+        <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+      </infoDemandeur>
+    </dc:acquittementP>
+  </S:Header>
+  <S:Body xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <v1:commanderTransmissionHistoriqueMesuresResponse xmlns:v1="http://www.enedis.fr/sge/b2b/commandertransmissionhistoriquemesures/v1.0">
+      <affaireId>A06NW0ZI</affaireId>
+      <prestations>
+        <prestation>
+          <rang>1</rang>
+          <fiche code="F380">
+            <libelle>Transmission de l'historique de courbe de charge</libelle>
+          </fiche>
+        </prestation>
+      </prestations>
+    </v1:commanderTransmissionHistoriqueMesuresResponse>
+  </S:Body>
+</soapenv:Envelope>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.erdf.fr/sge/b2b/dictionnaire/v4.0/dc" xmlns:ns0="http://www.enedis.fr/sge/b2b/commandertransmissionhistoriquemesures/v1.0" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header>
+    <dc:enteteP>
+      <version>1.0</version>
+      <infoFonctionnelles>
+        <pointId>09111642617347</pointId>
+      </infoFonctionnelles>
+      <infoDemandeur>
+        <loginDemandeur>sge-tiers@votre-entreprise.fr</loginDemandeur>
+      </infoDemandeur>
+    </dc:enteteP>
+  </SOAP-ENV:Header>
+  <ns1:Body>
+    <ns0:commanderTransmissionHistoriqueMesures>
+      <demande>
+        <donneesGenerales>
+          <objetCode>HDM</objetCode>
+          <contratId>2617347</contratId>
+          <pointId>09111642617347</pointId>
+          <initiateurLogin>sge-tiers@votre-entreprise.fr</initiateurLogin>
+        </donneesGenerales>
+        <historiqueMesures>
+          <dateDebut>2020-02-03</dateDebut>
+          <dateFin>2022-02-02</dateFin>
+          <declarationAccordClient>
+            <accordClient>true</accordClient>
+            <personnePhysique>
+              <civilite>M</civilite>
+              <nom>SIMPSON</nom>
+            </personnePhysique>
+          </declarationAccordClient>
+          <mesureType>CDC</mesureType>
+          <mesureCorrigee>false</mesureCorrigee>
+          <pasCdc>
+            <valeur>30</valeur>
+            <unite>min</unite>
+          </pasCdc>
+        </historiqueMesures>
+      </demande>
+    </ns0:commanderTransmissionHistoriqueMesures>
+  </ns1:Body>
+</SOAP-ENV:Envelope>
