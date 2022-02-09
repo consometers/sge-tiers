@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><R151 xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance"><En_Tete_Flux><Identifiant_Flux>R151</Identifiant_Flux><Libelle_Flux>Puissances maximales et index des PRM du segment C5 sur abonnement</Libelle_Flux><Version_XSD>V1</Version_XSD><Identifiant_Emetteur>ERDF</Identifiant_Emetteur><Identifiant_Destinataire>2617347</Identifiant_Destinataire><Date_Creation>2022-02-04T03:07:26+01:00</Date_Creation><Identifiant_Contrat>2617347</Identifiant_Contrat><Numero_Abonnement>3184182</Numero_Abonnement><Unite_Mesure_Index>Wh</Unite_Mesure_Index><Unite_Mesure_Puissance>VA</Unite_Mesure_Puissance></En_Tete_Flux>
+<PRM><Id_PRM>09111642617347</Id_PRM>
+<Donnees_Releve><Date_Releve>2022-02-02</Date_Releve>
+<Id_Calendrier_Fournisseur>FC000165</Id_Calendrier_Fournisseur>
+<Libelle_Calendrier_Fournisseur>Base</Libelle_Calendrier_Fournisseur>
+<Id_Calendrier_Distributeur>DI000001</Id_Calendrier_Distributeur>
+<Libelle_Calendrier_Distributeur>Sans différenciation temporelle</Libelle_Calendrier_Distributeur>
+<Id_Affaire>M02SXIXD</Id_Affaire>
+<Classe_Temporelle_Distributeur><Id_Classe_Temporelle>BASE</Id_Classe_Temporelle><Libelle_Classe_Temporelle>Base</Libelle_Classe_Temporelle><Rang_Cadran>1</Rang_Cadran><Valeur>9744495</Valeur><Indice_Vraisemblance>0</Indice_Vraisemblance></Classe_Temporelle_Distributeur>
+<Classe_Temporelle><Id_Classe_Temporelle>BASE</Id_Classe_Temporelle><Libelle_Classe_Temporelle>Base</Libelle_Classe_Temporelle><Rang_Cadran>1</Rang_Cadran><Valeur>9744495</Valeur><Indice_Vraisemblance>0</Indice_Vraisemblance></Classe_Temporelle>
+<Puissance_Maximale><Valeur>3817</Valeur></Puissance_Maximale>
+</Donnees_Releve>
+</PRM>
+</R151>
