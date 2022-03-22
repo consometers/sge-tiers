@@ -1,0 +1,8 @@
+{
+ "CERT_FULLCHAIN": "path to enedis-sge.com.fullchain.pem",
+ "CERT_PRIVKEY": "path to enedis-sge.com.key",
+ "LOGIN": "",
+ "PASSWORD": "",
+ "WSDL_FILES_ROOT" : "./webservices",
+ "CONTRACT_ID": ""
+}

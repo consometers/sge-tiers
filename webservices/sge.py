@@ -142,7 +142,7 @@ class ConsultationMesuresDetaillees:
         # FIXME strange http URL in wsdl
         self.client.service._binding_options["address"] = "https://sge-homologation-b2b.enedis.fr/ConsultationMesuresDetaillees/v2.0"
 
-    def consulter(self, point_id, type_code, grandeur_physique, date_debut, date_fin, soutirage=1, injection=0, mesures_corrigees=0, accord_client=1, mesures_pas=None):
+    def consulter(self, point_id, type_code, grandeur_physique, date_debut, date_fin, mesures_corrigees=0, soutirage=1, injection=0, accord_client=1, mesures_pas=None):
 
         if isinstance(date_debut, (dt.date, dt.datetime)):
             date_debut = format_date(date_debut)
@@ -163,11 +163,11 @@ class ConsultationMesuresDetaillees:
                 "accordClient": accord_client,
                 "mesuresCorrigees": mesures_corrigees
             }
+            # print(demande)
             if mesures_pas is not None:
                 demande['mesuresPas'] = mesures_pas
             with self.session.throttle:
                 res = self.client.service.consulterMesuresDetaillees(demande=demande)
-
             return {
                 'code': None,
                 'message': None,
@@ -184,7 +184,7 @@ class ConsultationMesuresDetaillees:
 
 class ConsultationDonneesTechniquesContractuelles:
 
-    WSDL = 'Enedis.SGE.GUI.0464.B2B.ConsultationDonneesTechniquesContractuellesV1.0_V1.1.0/Services/ConsultationDonneesTechniquesContractuelles/ConsultationDonneesTechniquesContractuelles-v1.0.wsdl'
+    WSDL = 'Enedis.SGE.GUI.0464.B2B.ConsultationDonneesTechniquesContractuellesV1.0_V1.2.0/Services/ConsultationDonneesTechniquesContractuelles/ConsultationDonneesTechniquesContractuelles-v1.0.wsdl'
 
     def __init__(self, session):
         self.session = session
@@ -197,11 +197,265 @@ class ConsultationDonneesTechniquesContractuelles:
                     pointId=point_id,
                     loginUtilisateur=self.session.login,
                     autorisationClient=autorisation_client)
-
             return {
                 'code': res['header']['acquittement']['resultat']['code'],
                 'message': res['header']['acquittement']['resultat']['_value_1'],
                 'data': res['body']['point']
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': None
+            }
+
+class CommandeCollectePublicationMesures:
+
+    WSDL = 'Enedis.SGE.GUI.0469.B2B CommandeCollectePublicationMesuresV3.0_v1.2.0/Services/CommandeCollectePublicationMesures/CommandeCollectePublicationMesures-v3.0.wsdl'        
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, objet_code, date_debut, date_fin, mesure_type_code, mesure_pas, transmission_recurrente, periodicite_transmission, mesures_corrigees=0, soutirage=1, injection=0, accord_client=1):
+
+        if isinstance(date_debut, (dt.date, dt.datetime)):
+            date_debut = format_date(date_debut)
+
+        if isinstance(date_fin, (dt.date, dt.datetime)):
+            date_fin = format_date(date_fin)
+
+        try :
+            demande = {
+                "donneesGenerales": {
+                    "objetCode": objet_code,
+                    "pointId": point_id,
+                    "initiateurLogin": self.session.login,
+                    "contratId": self.session.contract_id
+                },
+                "accesMesures": {
+                    "dateDebut": date_debut,
+                    "dateFin": date_fin,
+                    "mesuresTypeCode": mesure_type_code,
+                    "soutirage": soutirage,
+                    "injection": injection,
+                    "mesuresPas": mesure_pas,
+                    "mesuresCorrigees": mesures_corrigees,
+                    "transmissionRecurrente": transmission_recurrente,
+                    "periodiciteTransmission": periodicite_transmission,
+                    "declarationAccordClient": {
+                        "accord": accord_client,
+                        "personneMorale": {
+                        "denominationSociale" : "Test"
+                        }
+                    }
+                }
+            }
+            print(demande)
+            print(dt.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+            with self.session.throttle:
+                res = self.client.service.commanderCollectePublicationMesures(demande=demande)
+            return {
+                'code': None,
+                'message': None,
+                'data': res
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': {}
+            }
+
+class RechercheServicesSouscritsMesures:
+
+    WSDL = 'Enedis.SGE.GUI.0475.B2B RechercheServicesSouscritsMesures-V1.0_v1.0.0/Services/RechercheServicesSouscritsMesures/RechercheServicesSouscritsMesures.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def rechercher(self, prm):
+        try :
+            criteres = {
+                'pointId': prm,
+                'contratId': self.session.contract_id
+            }
+            with self.session.throttle:
+                res = self.client.service.rechercherServicesSouscritsMesures(criteres=criteres, loginUtilisateur=self.session.login)
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': []
+            }
+
+class CommandeArretServiceSouscritMesures:
+
+    WSDL = 'Enedis.SGE.GUI.0474.B2B CommandeArretServiceSouscritMesuresV1.0_1.1.0/Services/CommandeArretServiceSouscritMesures/CommandeArretServiceSouscritMesures-v1.0.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, service_souscrit_id):
+        try :
+            demande = {
+                "donneesGenerales": {
+                    "objetCode": "ASS",
+                    "initiateurLogin": self.session.login,
+                    "pointId": point_id,
+                    "contratId": self.session.contract_id
+                },
+                "arretServiceSouscrit": {
+                    "serviceSouscritId": service_souscrit_id
+                },
+            }
+            with self.session.throttle:
+                res = self.client.service.commanderArretServiceSouscritMesures(demande=demande)
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': None
+            }
+
+class CommandeTransmissionDonneesInfraJ:
+
+    WSDL = 'Enedis.SGE.GUI.0481.B2B CommandeTransmissionDonneesInfraJ-V1.0_v1.0.0/Services/CommandeTransmissionDonneesInfraJ/CommandeTransmissionDonneesInfraJ-v1.0.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, accord_client=1, soutirage=1, injection=0, soutirage_accord=0):
+        try :
+            demande = {
+                "donneesGenerales": {
+                    "objetCode": "AME",
+                    "initiateurLogin": self.session.login,
+                    "pointId": point_id,
+                    "contratId": self.session.contract_id
+                },
+                "accesDonnees": {
+                    "declarationAccordClient": {
+                        "accordClient": accord_client,
+                        "injection": injection,
+                        "soutirage": soutirage_accord,
+                        "personneMorale": {
+                            "denominationSociale": "TEST"
+                        },
+                    },
+                    "injection": injection,
+                    "soutirage": soutirage,
+                    "cdc": 1,
+                    "idx": 0,
+                    "ptd": 0,
+                },
+            }
+            with self.session.throttle:
+                print(demande)
+                res = self.client.service.commanderTransmissionDonneesInfraJ(demande=demande)
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res
+            }
+        except zeep.exceptions.Fault as fault:
+            res = fault.detail[0][0]
+            return {
+                'code': res.attrib['code'],
+                'message': res.text,
+                'data': None
+            }
+
+class CommandeTransmissionHistoriqueMesures:
+
+    WSDL = 'Enedis.SGE.GUI.0453.B2B_CommandeTransmissionHistoriqueMesuresV1.0_v1.1.1/Services/TransmissionHistoriqueMesures/CommandeTransmissionHistoriqueMesures-v1.0.wsdl'
+
+    def __init__(self, session):
+        self.session = session
+        self.client = session.make_client(self.WSDL)
+
+    def consulter(self, point_id, date_debut, date_fin, mesure_type_code, pas_cdc, mesures_corrigees=0, accord_client=1):
+
+        if isinstance(date_debut, (dt.date, dt.datetime)):
+            date_debut = format_date(date_debut)
+
+        if isinstance(date_fin, (dt.date, dt.datetime)):
+            date_fin = format_date(date_fin)
+
+        if mesure_type_code == 'CDC':
+            demande = {
+                "donneesGenerales": {
+                    "objetCode": "HDM",
+                    "initiateurLogin": self.session.login,
+                    "pointId": point_id,
+                    "contratId": self.session.contract_id
+                },
+                "historiqueMesures": {
+                    "declarationAccordClient": {
+                     "accordClient": accord_client,
+                     "personneMorale": { #needed for c5
+                         "denominationSociale": "Test",
+                       },
+                    },
+                    "mesureType": mesure_type_code,
+                    "dateDebut": date_debut,
+                    "dateFin": date_fin,
+                    "mesureCorrigee": 0,
+                    "pasCdc": {
+                        "valeur": pas_cdc,
+                        "unite": "min"
+                    }
+                },
+            }
+
+        if mesure_type_code == 'IDX':
+            demande = {
+                "donneesGenerales": {
+                    "objetCode": "HDM",
+                    "initiateurLogin": self.session.login,
+                    "pointId": point_id,
+                    "contratId": self.session.contract_id
+                },
+                "historiqueMesures": {
+                    "declarationAccordClient": {
+                     "accordClient": accord_client,
+                     "personneMorale": {
+                        "denominationSociale": "Test",
+                        },
+                    },
+                    "mesureType": mesure_type_code,
+                    "dateDebut": date_debut,
+                    "dateFin": date_fin,
+                    "mesureCorrigee": 0,
+                },
+            }
+
+
+        try :
+            print(demande)
+            with self.session.throttle:
+                res = self.client.service.commanderTransmissionHistoriqueMesures(demande=demande)
+            return {
+                'code': res['header']['acquittement']['resultat']['code'],
+                'message': res['header']['acquittement']['resultat']['_value_1'],
+                'data': res
             }
         except zeep.exceptions.Fault as fault:
             res = fault.detail[0][0]

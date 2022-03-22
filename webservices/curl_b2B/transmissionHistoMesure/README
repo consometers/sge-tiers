@@ -1,0 +1,6 @@
+Webservice CommandeTransmissionHistoriqueMesure has b2b constraints and needs a specific header to be sent with each requests.
+Below are all the templates xml files to send to validate each tests for this webservice.
+I only removed my contractId and initiateurLogin fields, put yours instead.
+
+Then use the curl.sh script to send your test.
+You need to add your private key and certificate to run the script.
