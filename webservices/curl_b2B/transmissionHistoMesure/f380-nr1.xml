@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:dc="http://www.erdf.fr/sge/b2b/dictionnaire/v4.0/dc">
+   <soap-env:Header>
+      <dc:enteteP>
+         <version>1.0</version>
+         <infoFonctionnelles>
+            <pointId>25957452924301</pointId>
+         </infoFonctionnelles>
+         <infoDemandeur>
+            <loginDemandeur></loginDemandeur>
+         </infoDemandeur>
+      </dc:enteteP>
+   </soap-env:Header>
+    <soap-env:Body>
+        <ns0:commanderTransmissionHistoriqueMesures xmlns:ns0="http://www.enedis.fr/sge/b2b/commandertransmissionhistoriquemesures/v1.0">
+            <demande>
+                <donneesGenerales>
+                    <objetCode>HDM</objetCode>
+                    <contratId></contratId>
+                    <pointId>25957452924301</pointId>
+                    <initiateurLogin></initiateurLogin>
+                </donneesGenerales>
+                <historiqueMesures>
+                    <dateDebut>2018-01-02</dateDebut>
+                    <dateFin>2022-01-02</dateFin>
+                    <declarationAccordClient>
+                        <accordClient>true</accordClient>
+                        <personneMorale>
+                            <denominationSociale>Test</denominationSociale>
+                        </personneMorale>
+                    </declarationAccordClient>
+                    <mesureType>CDC</mesureType>
+                    <mesureCorrigee>false</mesureCorrigee>
+                    <pasCdc>
+                        <valeur>30</valeur>
+                        <unite>min</unite>
+                    </pasCdc>
+                </historiqueMesures>
+            </demande>
+        </ns0:commanderTransmissionHistoriqueMesures>
+    </soap-env:Body>
+</soap-env:Envelope>
