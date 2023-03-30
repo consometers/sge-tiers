@@ -145,20 +145,22 @@ Voici notre expérience à la mi-2020.
     </tr>
     <tr>
       <td>Homologation</td>
-      <td></td>
+      <td>2 semaines</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>❌</td>
     </tr>
     <tr>
       <td>Échange de certificats SSL prod</td>
-      <td></td>
+      <td>1 semaine</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
     </tr>
   </tbody>
 </table>
+
+⚠️ Le renouvellement d’un certificat SSL peut également prendre plusieurs semaines.
 
 ### Inscription sur DataHub
 
