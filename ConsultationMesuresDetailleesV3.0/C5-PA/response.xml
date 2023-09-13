@@ -1,0 +1,2323 @@
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns3:consulterMesuresDetailleesResponseV3 xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/common">
+      <pointId>09111642617347</pointId>
+      <mesuresCorrigees>BRUT</mesuresCorrigees>
+      <periode>
+        <dateDebut>2023-04-01</dateDebut>
+        <dateFin>2023-04-07</dateFin>
+      </periode>
+      <grandeur>
+        <grandeurMetier>CONS</grandeurMetier>
+        <grandeurPhysique>PA</grandeurPhysique>
+        <unite>W</unite>
+        <points>
+          <v>1268</v>
+          <d>2023-04-01 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>830</v>
+          <d>2023-04-01 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>254</v>
+          <d>2023-04-01 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>250</v>
+          <d>2023-04-01 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>254</v>
+          <d>2023-04-01 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>884</v>
+          <d>2023-04-01 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>288</v>
+          <d>2023-04-01 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>308</v>
+          <d>2023-04-01 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>310</v>
+          <d>2023-04-01 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>306</v>
+          <d>2023-04-01 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>252</v>
+          <d>2023-04-01 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>264</v>
+          <d>2023-04-01 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>230</v>
+          <d>2023-04-01 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>246</v>
+          <d>2023-04-01 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-01 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>216</v>
+          <d>2023-04-01 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>238</v>
+          <d>2023-04-01 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>238</v>
+          <d>2023-04-01 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2688</v>
+          <d>2023-04-01 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2174</v>
+          <d>2023-04-01 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2782</v>
+          <d>2023-04-01 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2992</v>
+          <d>2023-04-01 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2622</v>
+          <d>2023-04-01 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1654</v>
+          <d>2023-04-01 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1560</v>
+          <d>2023-04-01 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>584</v>
+          <d>2023-04-01 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>716</v>
+          <d>2023-04-01 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>852</v>
+          <d>2023-04-01 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1508</v>
+          <d>2023-04-01 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1374</v>
+          <d>2023-04-01 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>462</v>
+          <d>2023-04-01 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>482</v>
+          <d>2023-04-01 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>522</v>
+          <d>2023-04-01 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>526</v>
+          <d>2023-04-01 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>842</v>
+          <d>2023-04-01 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>576</v>
+          <d>2023-04-01 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>494</v>
+          <d>2023-04-01 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>522</v>
+          <d>2023-04-01 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>462</v>
+          <d>2023-04-01 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>464</v>
+          <d>2023-04-01 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1886</v>
+          <d>2023-04-01 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>504</v>
+          <d>2023-04-01 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1574</v>
+          <d>2023-04-01 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1626</v>
+          <d>2023-04-01 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1298</v>
+          <d>2023-04-01 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1600</v>
+          <d>2023-04-01 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1312</v>
+          <d>2023-04-01 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>712</v>
+          <d>2023-04-02 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>278</v>
+          <d>2023-04-02 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>306</v>
+          <d>2023-04-02 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>288</v>
+          <d>2023-04-02 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>302</v>
+          <d>2023-04-02 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>304</v>
+          <d>2023-04-02 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>300</v>
+          <d>2023-04-02 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>300</v>
+          <d>2023-04-02 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>308</v>
+          <d>2023-04-02 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>254</v>
+          <d>2023-04-02 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>248</v>
+          <d>2023-04-02 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>220</v>
+          <d>2023-04-02 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-02 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-02 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>258</v>
+          <d>2023-04-02 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>252</v>
+          <d>2023-04-02 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>250</v>
+          <d>2023-04-02 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>250</v>
+          <d>2023-04-02 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>256</v>
+          <d>2023-04-02 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>272</v>
+          <d>2023-04-02 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>234</v>
+          <d>2023-04-02 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>342</v>
+          <d>2023-04-02 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1694</v>
+          <d>2023-04-02 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1690</v>
+          <d>2023-04-02 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>548</v>
+          <d>2023-04-02 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>550</v>
+          <d>2023-04-02 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>552</v>
+          <d>2023-04-02 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1202</v>
+          <d>2023-04-02 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>928</v>
+          <d>2023-04-02 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>584</v>
+          <d>2023-04-02 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>534</v>
+          <d>2023-04-02 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>496</v>
+          <d>2023-04-02 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>506</v>
+          <d>2023-04-02 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>752</v>
+          <d>2023-04-02 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>502</v>
+          <d>2023-04-02 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1054</v>
+          <d>2023-04-02 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>972</v>
+          <d>2023-04-02 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1520</v>
+          <d>2023-04-02 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>446</v>
+          <d>2023-04-02 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>468</v>
+          <d>2023-04-02 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>508</v>
+          <d>2023-04-02 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>606</v>
+          <d>2023-04-02 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>640</v>
+          <d>2023-04-02 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1596</v>
+          <d>2023-04-02 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2244</v>
+          <d>2023-04-02 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1780</v>
+          <d>2023-04-02 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2142</v>
+          <d>2023-04-02 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1280</v>
+          <d>2023-04-02 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1256</v>
+          <d>2023-04-03 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>528</v>
+          <d>2023-04-03 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-03 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-03 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>252</v>
+          <d>2023-04-03 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>282</v>
+          <d>2023-04-03 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>322</v>
+          <d>2023-04-03 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>280</v>
+          <d>2023-04-03 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>322</v>
+          <d>2023-04-03 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>290</v>
+          <d>2023-04-03 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>226</v>
+          <d>2023-04-03 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-03 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-03 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-03 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-03 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>220</v>
+          <d>2023-04-03 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-03 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-03 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>664</v>
+          <d>2023-04-03 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>620</v>
+          <d>2023-04-03 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>600</v>
+          <d>2023-04-03 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1912</v>
+          <d>2023-04-03 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1694</v>
+          <d>2023-04-03 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1370</v>
+          <d>2023-04-03 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2094</v>
+          <d>2023-04-03 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1538</v>
+          <d>2023-04-03 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>978</v>
+          <d>2023-04-03 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1510</v>
+          <d>2023-04-03 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>770</v>
+          <d>2023-04-03 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>504</v>
+          <d>2023-04-03 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>512</v>
+          <d>2023-04-03 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1620</v>
+          <d>2023-04-03 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>474</v>
+          <d>2023-04-03 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>520</v>
+          <d>2023-04-03 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>518</v>
+          <d>2023-04-03 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>500</v>
+          <d>2023-04-03 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>476</v>
+          <d>2023-04-03 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>412</v>
+          <d>2023-04-03 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>422</v>
+          <d>2023-04-03 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1140</v>
+          <d>2023-04-03 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>780</v>
+          <d>2023-04-03 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1016</v>
+          <d>2023-04-03 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1692</v>
+          <d>2023-04-03 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1048</v>
+          <d>2023-04-03 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>634</v>
+          <d>2023-04-03 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>698</v>
+          <d>2023-04-03 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2130</v>
+          <d>2023-04-03 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1316</v>
+          <d>2023-04-03 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1254</v>
+          <d>2023-04-04 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>324</v>
+          <d>2023-04-04 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-04 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-04 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>222</v>
+          <d>2023-04-04 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-04 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>222</v>
+          <d>2023-04-04 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-04 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-04 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>254</v>
+          <d>2023-04-04 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>302</v>
+          <d>2023-04-04 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>282</v>
+          <d>2023-04-04 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>302</v>
+          <d>2023-04-04 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>300</v>
+          <d>2023-04-04 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>280</v>
+          <d>2023-04-04 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>220</v>
+          <d>2023-04-04 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-04 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>758</v>
+          <d>2023-04-04 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>756</v>
+          <d>2023-04-04 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>750</v>
+          <d>2023-04-04 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1774</v>
+          <d>2023-04-04 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1372</v>
+          <d>2023-04-04 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2582</v>
+          <d>2023-04-04 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2472</v>
+          <d>2023-04-04 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1078</v>
+          <d>2023-04-04 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1562</v>
+          <d>2023-04-04 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>634</v>
+          <d>2023-04-04 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1808</v>
+          <d>2023-04-04 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1288</v>
+          <d>2023-04-04 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>420</v>
+          <d>2023-04-04 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>370</v>
+          <d>2023-04-04 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>360</v>
+          <d>2023-04-04 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>356</v>
+          <d>2023-04-04 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>286</v>
+          <d>2023-04-04 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>322</v>
+          <d>2023-04-04 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>318</v>
+          <d>2023-04-04 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>312</v>
+          <d>2023-04-04 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>262</v>
+          <d>2023-04-04 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>254</v>
+          <d>2023-04-04 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>266</v>
+          <d>2023-04-04 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>274</v>
+          <d>2023-04-04 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1706</v>
+          <d>2023-04-04 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2292</v>
+          <d>2023-04-04 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1378</v>
+          <d>2023-04-04 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>428</v>
+          <d>2023-04-04 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>422</v>
+          <d>2023-04-04 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>424</v>
+          <d>2023-04-04 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>672</v>
+          <d>2023-04-04 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2710</v>
+          <d>2023-04-05 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1420</v>
+          <d>2023-04-05 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1260</v>
+          <d>2023-04-05 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1256</v>
+          <d>2023-04-05 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>768</v>
+          <d>2023-04-05 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-05 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-05 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>290</v>
+          <d>2023-04-05 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-05 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-05 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>266</v>
+          <d>2023-04-05 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>240</v>
+          <d>2023-04-05 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1156</v>
+          <d>2023-04-05 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>638</v>
+          <d>2023-04-05 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1838</v>
+          <d>2023-04-05 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1466</v>
+          <d>2023-04-05 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>688</v>
+          <d>2023-04-05 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2458</v>
+          <d>2023-04-05 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2216</v>
+          <d>2023-04-05 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>4036</v>
+          <d>2023-04-05 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1398</v>
+          <d>2023-04-05 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>782</v>
+          <d>2023-04-05 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1516</v>
+          <d>2023-04-05 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>792</v>
+          <d>2023-04-05 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>358</v>
+          <d>2023-04-05 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>346</v>
+          <d>2023-04-05 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>364</v>
+          <d>2023-04-05 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>362</v>
+          <d>2023-04-05 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>360</v>
+          <d>2023-04-05 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>316</v>
+          <d>2023-04-05 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1690</v>
+          <d>2023-04-05 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2076</v>
+          <d>2023-04-05 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1858</v>
+          <d>2023-04-05 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1422</v>
+          <d>2023-04-05 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>408</v>
+          <d>2023-04-05 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>414</v>
+          <d>2023-04-05 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>386</v>
+          <d>2023-04-05 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>376</v>
+          <d>2023-04-05 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1912</v>
+          <d>2023-04-05 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1528</v>
+          <d>2023-04-05 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1890</v>
+          <d>2023-04-05 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2506</v>
+          <d>2023-04-05 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1454</v>
+          <d>2023-04-05 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1322</v>
+          <d>2023-04-06 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1324</v>
+          <d>2023-04-06 00:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>510</v>
+          <d>2023-04-06 01:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>298</v>
+          <d>2023-04-06 01:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>246</v>
+          <d>2023-04-06 02:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-06 02:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>224</v>
+          <d>2023-04-06 03:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>262</v>
+          <d>2023-04-06 03:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-06 04:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-06 04:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-06 05:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>222</v>
+          <d>2023-04-06 05:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>262</v>
+          <d>2023-04-06 06:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>226</v>
+          <d>2023-04-06 06:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>244</v>
+          <d>2023-04-06 07:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-06 07:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-06 08:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>242</v>
+          <d>2023-04-06 08:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>772</v>
+          <d>2023-04-06 09:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>524</v>
+          <d>2023-04-06 09:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>510</v>
+          <d>2023-04-06 10:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>522</v>
+          <d>2023-04-06 10:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>558</v>
+          <d>2023-04-06 11:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1172</v>
+          <d>2023-04-06 11:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>582</v>
+          <d>2023-04-06 12:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>566</v>
+          <d>2023-04-06 12:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>590</v>
+          <d>2023-04-06 13:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1624</v>
+          <d>2023-04-06 13:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>572</v>
+          <d>2023-04-06 14:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>582</v>
+          <d>2023-04-06 14:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>574</v>
+          <d>2023-04-06 15:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1198</v>
+          <d>2023-04-06 15:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>674</v>
+          <d>2023-04-06 16:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>668</v>
+          <d>2023-04-06 16:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>682</v>
+          <d>2023-04-06 17:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>682</v>
+          <d>2023-04-06 17:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>686</v>
+          <d>2023-04-06 18:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1448</v>
+          <d>2023-04-06 18:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>676</v>
+          <d>2023-04-06 19:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>644</v>
+          <d>2023-04-06 19:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1104</v>
+          <d>2023-04-06 20:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>910</v>
+          <d>2023-04-06 20:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1990</v>
+          <d>2023-04-06 21:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>1604</v>
+          <d>2023-04-06 21:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>698</v>
+          <d>2023-04-06 22:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>800</v>
+          <d>2023-04-06 22:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>792</v>
+          <d>2023-04-06 23:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2406</v>
+          <d>2023-04-06 23:30:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+        <points>
+          <v>2106</v>
+          <d>2023-04-07 00:00:00</d>
+          <p>PT30M</p>
+          <n>B</n>
+          <iv>0</iv>
+          <ec>0</ec>
+        </points>
+      </grandeur>
+      <modeCalcul>MESURE</modeCalcul>
+    </ns3:consulterMesuresDetailleesResponseV3>
+  </soap:Body>
+</soap:Envelope>

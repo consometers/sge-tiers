@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/common">
+  <SOAP-ENV:Header/>
+  <ns0:Body>
+    <ns1:consulterMesuresDetailleesV3>
+      <demande>
+        <initiateurLogin>sge-tiers@votre-entreprise.fr</initiateurLogin>
+        <pointId>30001642617347</pointId>
+        <mesuresTypeCode>ENERGIE</mesuresTypeCode>
+        <grandeurPhysique>EA</grandeurPhysique>
+        <dateDebut>2023-04-01</dateDebut>
+        <dateFin>2023-05-01</dateFin>
+        <mesuresCorrigees>false</mesuresCorrigees>
+        <sens>SOUTIRAGE</sens>
+        <cadreAcces>ACCORD_CLIENT</cadreAcces>
+      </demande>
+    </ns1:consulterMesuresDetailleesV3>
+  </ns0:Body>
+</SOAP-ENV:Envelope>

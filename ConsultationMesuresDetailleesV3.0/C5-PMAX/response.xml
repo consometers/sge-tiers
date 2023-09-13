@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns3:consulterMesuresDetailleesResponseV3 xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/common">
+      <pointId>09111642617347</pointId>
+      <mesuresCorrigees>BRUT</mesuresCorrigees>
+      <periode>
+        <dateDebut>2023-04-01</dateDebut>
+        <dateFin>2023-05-01</dateFin>
+      </periode>
+      <grandeur>
+        <grandeurMetier>CONS</grandeurMetier>
+        <grandeurPhysique>PMA</grandeurPhysique>
+        <unite>VA</unite>
+        <points>
+          <v>6241</v>
+          <d>2023-04-01 09:13:20</d>
+        </points>
+        <points>
+          <v>3382</v>
+          <d>2023-04-02 22:35:42</d>
+        </points>
+        <points>
+          <v>3365</v>
+          <d>2023-04-03 11:31:27</d>
+        </points>
+        <points>
+          <v>3912</v>
+          <d>2023-04-04 20:43:14</d>
+        </points>
+        <points>
+          <v>6716</v>
+          <d>2023-04-05 11:43:56</d>
+        </points>
+        <points>
+          <v>3724</v>
+          <d>2023-04-06 20:41:46</d>
+        </points>
+        <points>
+          <v>3354</v>
+          <d>2023-04-07 22:38:33</d>
+        </points>
+        <points>
+          <v>3825</v>
+          <d>2023-04-08 10:05:31</d>
+        </points>
+        <points>
+          <v>4485</v>
+          <d>2023-04-09 11:52:49</d>
+        </points>
+        <points>
+          <v>5061</v>
+          <d>2023-04-10 14:58:52</d>
+        </points>
+        <points>
+          <v>4638</v>
+          <d>2023-04-11 20:24:35</d>
+        </points>
+        <points>
+          <v>3467</v>
+          <d>2023-04-12 21:37:10</d>
+        </points>
+        <points>
+          <v>5240</v>
+          <d>2023-04-13 10:55:17</d>
+        </points>
+        <points>
+          <v>5790</v>
+          <d>2023-04-14 08:23:58</d>
+        </points>
+        <points>
+          <v>4690</v>
+          <d>2023-04-15 20:52:23</d>
+        </points>
+        <points>
+          <v>4739</v>
+          <d>2023-04-16 09:10:20</d>
+        </points>
+        <points>
+          <v>3804</v>
+          <d>2023-04-17 21:18:24</d>
+        </points>
+        <points>
+          <v>3270</v>
+          <d>2023-04-18 23:24:19</d>
+        </points>
+        <points>
+          <v>5887</v>
+          <d>2023-04-19 08:49:09</d>
+        </points>
+        <points>
+          <v>3162</v>
+          <d>2023-04-20 12:01:40</d>
+        </points>
+        <points>
+          <v>3119</v>
+          <d>2023-04-21 22:10:06</d>
+        </points>
+        <points>
+          <v>3405</v>
+          <d>2023-04-22 13:39:57</d>
+        </points>
+        <points>
+          <v>3390</v>
+          <d>2023-04-23 22:09:56</d>
+        </points>
+        <points>
+          <v>5886</v>
+          <d>2023-04-24 08:22:53</d>
+        </points>
+        <points>
+          <v>3193</v>
+          <d>2023-04-25 23:00:20</d>
+        </points>
+        <points>
+          <v>3473</v>
+          <d>2023-04-26 12:47:14</d>
+        </points>
+        <points>
+          <v>3285</v>
+          <d>2023-04-27 08:42:04</d>
+        </points>
+        <points>
+          <v>4855</v>
+          <d>2023-04-28 09:14:27</d>
+        </points>
+        <points>
+          <v>5642</v>
+          <d>2023-04-29 13:38:30</d>
+        </points>
+        <points>
+          <v>5546</v>
+          <d>2023-04-30 09:06:03</d>
+        </points>
+      </grandeur>
+      <modeCalcul>MESURE</modeCalcul>
+      <pas>P1D</pas>
+    </ns3:consulterMesuresDetailleesResponseV3>
+  </soap:Body>
+</soap:Envelope>

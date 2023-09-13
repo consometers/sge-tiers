@@ -1,0 +1,1268 @@
+<?xml version="1.0" ?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns3:consulterMesuresDetailleesResponseV3 xmlns:ns4="http://www.enedis.fr/sge/b2b/technique/v1.0" xmlns:ns3="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/common">
+      <pointId>09111642617347</pointId>
+      <periode>
+        <dateDebut>2023-04-01</dateDebut>
+        <dateFin>2023-05-01</dateFin>
+      </periode>
+      <contexte>
+        <etapeMetier>BRUT</etapeMetier>
+        <contexteReleve>COL</contexteReleve>
+        <typeReleve>AQ</typeReleve>
+        <grandeur>
+          <grandeurMetier>CONS</grandeurMetier>
+          <grandeurPhysique>EA</grandeurPhysique>
+          <unite>Wh</unite>
+          <calendrier>
+            <idCalendrier>FC000050</idCalendrier>
+            <libelleCalendrier>6 cadrans</libelleCalendrier>
+            <classeTemporelle>
+              <idClasseTemporelle>BUHP</idClasseTemporelle>
+              <libelleClasseTemporelle>Bleu Heures Pleines</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F2</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>1422334</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>1439264</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>1450738</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>1464339</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>1464339</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>1464339</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>1464339</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>1464339</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>1477496</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>1492521</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>1507194</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>1524075</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>1537058</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>1537058</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>1552073</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>1563636</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>1574366</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>1584002</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>1594889</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>1610067</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>1620333</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>1629693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>1640034</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>1654140</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>1668861</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>1668861</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>1668861</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>1681137</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>1695894</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>1715033</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+            <classeTemporelle>
+              <idClasseTemporelle>BCHP</idClasseTemporelle>
+              <libelleClasseTemporelle>Blanc Heures Pleines</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F4</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>418462</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>418462</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>418462</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>418462</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>432201</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>449275</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>461279</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>472800</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>488693</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>500862</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>511276</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>511276</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>511276</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>511276</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+            <classeTemporelle>
+              <idClasseTemporelle>RHC</idClasseTemporelle>
+              <libelleClasseTemporelle>Rouge Heures Creuses</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F5</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>110045</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+            <classeTemporelle>
+              <idClasseTemporelle>BCHC</idClasseTemporelle>
+              <libelleClasseTemporelle>Blanc Heures Creuses</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F3</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>148724</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>148724</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>148724</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>148724</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>150838</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>157764</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>162976</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>168614</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>170290</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>170290</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>170290</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>170290</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>170290</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>173031</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>174659</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>178157</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>182667</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>184651</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>184651</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>184651</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+            <classeTemporelle>
+              <idClasseTemporelle>BUHC</idClasseTemporelle>
+              <libelleClasseTemporelle>Bleu Heures Creuses</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F1</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>14708116</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>14713311</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>14718216</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>14722648</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>14724205</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>14724205</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>14724205</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>14724205</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>14724803</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>14727341</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>14732109</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>14736813</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>14742495</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>14745214</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>14748406</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>14753727</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>14758066</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>14763358</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>14768066</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>14771573</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>14773999</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>14778544</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>14780754</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>14785145</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>14789528</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>14791582</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>14791582</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>14794280</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>14797023</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>14801818</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+            <classeTemporelle>
+              <idClasseTemporelle>RHP</idClasseTemporelle>
+              <libelleClasseTemporelle>Rouge Heures Pleines</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_F6</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>200083</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+          </calendrier>
+          <calendrier>
+            <idCalendrier>DI000001</idCalendrier>
+            <libelleCalendrier>Sans différenciation temporelle</libelleCalendrier>
+            <classeTemporelle>
+              <idClasseTemporelle>BASE</idClasseTemporelle>
+              <libelleClasseTemporelle>Base</libelleClasseTemporelle>
+              <codeCadran>IDX_EAS_D1</codeCadran>
+              <valeur>
+                <d>2023-04-01 00:00:00</d>
+                <v>17007764</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-02 00:00:00</d>
+                <v>17029889</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-03 00:00:00</d>
+                <v>17046268</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-04 00:00:00</d>
+                <v>17064301</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-05 00:00:00</d>
+                <v>17081711</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-06 00:00:00</d>
+                <v>17105711</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-07 00:00:00</d>
+                <v>17122927</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-08 00:00:00</d>
+                <v>17140086</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-09 00:00:00</d>
+                <v>17155517</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-10 00:00:00</d>
+                <v>17173080</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-11 00:00:00</d>
+                <v>17192521</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-12 00:00:00</d>
+                <v>17214106</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-13 00:00:00</d>
+                <v>17232771</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-14 00:00:00</d>
+                <v>17254124</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-15 00:00:00</d>
+                <v>17273959</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-16 00:00:00</d>
+                <v>17290843</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-17 00:00:00</d>
+                <v>17305912</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-18 00:00:00</d>
+                <v>17320840</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-19 00:00:00</d>
+                <v>17336435</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-20 00:00:00</d>
+                <v>17355120</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-21 00:00:00</d>
+                <v>17367812</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-22 00:00:00</d>
+                <v>17381717</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-23 00:00:00</d>
+                <v>17394268</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-24 00:00:00</d>
+                <v>17412765</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-25 00:00:00</d>
+                <v>17431869</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-26 00:00:00</d>
+                <v>17449590</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-27 00:00:00</d>
+                <v>17464514</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-28 00:00:00</d>
+                <v>17481472</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-29 00:00:00</d>
+                <v>17498972</v>
+                <iv>0</iv>
+              </valeur>
+              <valeur>
+                <d>2023-04-30 00:00:00</d>
+                <v>17522906</v>
+                <iv>0</iv>
+              </valeur>
+            </classeTemporelle>
+          </calendrier>
+          <cadranTotalisateur>
+            <codeCadran>IDX_EAS_T</codeCadran>
+            <valeur>
+              <d>2023-04-01 00:00:00</d>
+              <v>17007764</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-02 00:00:00</d>
+              <v>17029889</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-03 00:00:00</d>
+              <v>17046268</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-04 00:00:00</d>
+              <v>17064301</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-05 00:00:00</d>
+              <v>17081711</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-06 00:00:00</d>
+              <v>17105711</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-07 00:00:00</d>
+              <v>17122927</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-08 00:00:00</d>
+              <v>17140086</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-09 00:00:00</d>
+              <v>17155517</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-10 00:00:00</d>
+              <v>17173080</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-11 00:00:00</d>
+              <v>17192521</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-12 00:00:00</d>
+              <v>17214106</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-13 00:00:00</d>
+              <v>17232771</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-14 00:00:00</d>
+              <v>17254124</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-15 00:00:00</d>
+              <v>17273959</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-16 00:00:00</d>
+              <v>17290843</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-17 00:00:00</d>
+              <v>17305912</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-18 00:00:00</d>
+              <v>17320840</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-19 00:00:00</d>
+              <v>17336435</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-20 00:00:00</d>
+              <v>17355120</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-21 00:00:00</d>
+              <v>17367812</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-22 00:00:00</d>
+              <v>17381717</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-23 00:00:00</d>
+              <v>17394268</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-24 00:00:00</d>
+              <v>17412765</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-25 00:00:00</d>
+              <v>17431869</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-26 00:00:00</d>
+              <v>17449590</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-27 00:00:00</d>
+              <v>17464514</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-28 00:00:00</d>
+              <v>17481472</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-29 00:00:00</d>
+              <v>17498972</v>
+              <iv>0</iv>
+            </valeur>
+            <valeur>
+              <d>2023-04-30 00:00:00</d>
+              <v>17522906</v>
+              <iv>0</iv>
+            </valeur>
+          </cadranTotalisateur>
+        </grandeur>
+      </contexte>
+    </ns3:consulterMesuresDetailleesResponseV3>
+  </soap:Body>
+</soap:Envelope>

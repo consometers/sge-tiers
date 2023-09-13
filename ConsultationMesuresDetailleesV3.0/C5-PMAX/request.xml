@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns0="http://www.enedis.fr/sge/b2b/services/consultationmesuresdetaillees/common" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <ns1:Body>
+    <ns0:consulterMesuresDetailleesV3>
+      <demande>
+        <initiateurLogin>sge-tiers@votre-entreprise.fr</initiateurLogin>
+        <pointId>09111642617347</pointId>
+        <mesuresTypeCode>PMAX</mesuresTypeCode>
+        <grandeurPhysique>PMA</grandeurPhysique>
+        <dateDebut>2023-04-01</dateDebut>
+        <dateFin>2023-05-01</dateFin>
+        <mesuresPas>P1D</mesuresPas>
+        <mesuresCorrigees>false</mesuresCorrigees>
+        <sens>SOUTIRAGE</sens>
+        <cadreAcces>ACCORD_CLIENT</cadreAcces>
+      </demande>
+    </ns0:consulterMesuresDetailleesV3>
+  </ns1:Body>
+</SOAP-ENV:Envelope>
