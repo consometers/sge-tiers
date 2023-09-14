@@ -1,7 +1,7 @@
 # ConsultationMesuresDetaillees v2.0
 
-[!WARNING]
-API décommissionnée fin 2023, utiliser [ConsultationMesuresDetaillees v3.0](/ConsultationMesuresDetailleesV3.0/README.md).
+> [!WARNING]
+> API décommissionnée fin 2023, utiliser [ConsultationMesuresDetaillees v3.0](../ConsultationMesuresDetailleesV3.0).
 
 Pour les points C5 Linky ouverts aux nouveaux services (avec un niveau d’ouverture aux services égal à 2) :
 
